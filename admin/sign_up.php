@@ -37,9 +37,8 @@
       padding: 0;
       font-family: Poppin, sans-serif;
       position: relative;
-      min-height: 100vh;
+
       width: 100%;
-      overflow: hidden;
       color: #6A696B;
       background: #fcfcfc;
     }
@@ -48,7 +47,7 @@
       max-width: 400px;
       background: white;
       border-radius: 15px;
-      margin: 120px auto;
+      margin: 20px auto;
       box-shadow: 1px 1px 5px #efefef;
       padding: 50px;
     }
@@ -158,9 +157,9 @@
     .learn-icon {
       width: 10px;
     }
-    
+
     #username {
-        text-transform: lowercase;
+      text-transform: lowercase;
     }
   </style>
 </head>
@@ -174,10 +173,10 @@
       Welcome to the Admin Registration Page. Please fill out the form below to create your admin account. Ensure all fields are completed accurately.
     </div>
 
-    <form id="signup-form">
+    <form id="signup-form" autocomplete="off">
       <div class="input-group">
         <label for="username">Username</label>
-        <input type="text" name="username" id="username" >
+        <input type="text" name="username" id="username">
         <div class="error"></div>
         <div class="required">
           <span class="star">*</span> <span>Choose a unique username for your admin account</span>
@@ -185,12 +184,12 @@
       </div>
       <div class="input-group">
         <label for="email">Email Address</label>
-        <input type="text" name="email" id="email" >
+        <input type="text" name="email" id="email">
         <div class="error"></div>
       </div>
       <div class="input-group">
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" >
+        <input type="password" name="password" id="password">
         <div class="error"></div>
         <div class="required">
           <span class="star">*</span> <span>Create a strong password with at least 8 characters, including letters and numbers</span>
@@ -226,7 +225,7 @@
         document.getElementById("toggle-password").style.display = 'none';
       }
     });
-    
+
     var error = document.querySelectorAll(".error");
     document.getElementById("signup-form").addEventListener("submit", async function(e) {
       e.preventDefault();
@@ -237,25 +236,25 @@
           body: formData
         });
         const result = await res.json();
-       
-         
-        if(result.redirect) {
-            window.location.assign("./admin.php")
+
+
+        if (result.redirect) {
+          window.location.assign("./admin.php")
         }
-        if(result.email) {
-            error[1].textContent  = result.email
-        } else { 
-             error[1].textContent  = ""
-        }
-        if(result.username) {
-            error[0].textContent  = result.username
+        if (result.email) {
+          error[1].textContent = result.email
         } else {
-             error[0].textContent  = ""
+          error[1].textContent = ""
         }
-        if(result.password) {
-            error[2].textContent = result.password
+        if (result.username) {
+          error[0].textContent = result.username
         } else {
-             error[2].textContent  = ""
+          error[0].textContent = ""
+        }
+        if (result.password) {
+          error[2].textContent = result.password
+        } else {
+          error[2].textContent = ""
         }
       } catch (err) {
         console.error("Error:", err);

@@ -6,11 +6,19 @@ require "../vendor/autoload.php"; // Path to Composer autoloader
 
 $mail = new PHPMailer(true);
 
+require "vendor/autoload.php";
+
+use Dotenv\Dotenv;
+
+// Load the .env file
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 $mail->isSMTP();
 $mail->Host = "smtp.gmail.com"; // Gmail SMTP server
 $mail->SMTPAuth = true;
-$mail->Username = "tcstudio6542@gmail.com"; // Your Gmail address
-$mail->Password = "vokt zriy hsjf drnl"; // Your Gmail password
+$mail->Username = $_ENV["EMAIL"]; // Your Gmail address
+$mail->Password = $_ENV["PASSWORD"]; // Your Gmail password
 $mail->SMTPSecure = "ssl"; // Use 'tls' or 'ssl'
 $mail->Port = 465; // Port for TLS, 465 for SSL
 

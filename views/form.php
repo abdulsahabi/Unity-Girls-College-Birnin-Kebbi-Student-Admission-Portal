@@ -41,13 +41,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      font-size: 12px;
+
+
       width: 100%;
       background: #FBF7FDff;
     }
 
     .form-container {
-      width: 400px;
+      min-width: 400px;
       height: 650px;
       display: flex;
       align-items: flex-start;
@@ -56,7 +58,7 @@
       border-radius: 20px;
       border: 1px solid lightgrey;
       padding: 30px 0;
-      margin-top: 60px;
+      margin: 60px auto;
       position: relative;
     }
 
@@ -354,7 +356,7 @@
       position: absolute;
       left: 60px;
       top: -10px;
-      
+
     }
 
     .sign-in::after {
@@ -365,13 +367,13 @@
       position: absolute;
       left: 150px;
       top: -27px;
-      
+
       color: lightgray;
       padding: 10px;
     }
-    
+
     .sign-in a {
-        text-decoration: none;
+      text-decoration: none;
     }
 
     .login {
@@ -408,13 +410,12 @@
       display: none;
     }
 
-    : .two-btn {
+    .two-btn {
       justify-content: space-between;
       margin-top: 50px;
 
     }
 
-    .button:hover {}
 
     .btn:hover {
       border: 1px solid var(--primary_color);
@@ -497,14 +498,10 @@
       color: red;
       font-size: 14px;
     }
-    
+
     .rotate {
-        transform: rotate(60deg);
+      transform: rotate(60deg);
     }
-    
-    
-    
-    
   </style>
 </head>
 
@@ -517,6 +514,7 @@
     </div>
     <div class="input-container">
       <div class="steps">
+        <div class="internet-connection error"></div>
         <div class="account-creation">
           Registration form
         </div>
@@ -535,27 +533,27 @@
       <div class="form-wrapper">
 
         <div></div>
-        <form>
+        <form autocomplete="off">
           <div id="personal-information">
             <div class="personal-info-title sec-title">
               Personal Information:
             </div>
             <div class="input-group">
-              <input type="text" id="fullname" name="fullname">
+              <input type="text" autocomplete="off" id="fullname" name="fullname">
               <label for="fullname" class="shift-label">
                 Full Name
               </label>
               <div class="error"></div>
             </div>
             <div class="input-group">
-              <input type="email" id="email" name="email">
+              <input type="email" autocomplete="off" id="email" name="email">
               <label for="email" class="shift-label">
                 Email address
               </label>
               <div class="error email-error"></div>
             </div>
             <div class="input-group">
-              <input type="date" id="dob" name="dob">
+              <input type="date" autocomplete="off" id="dob" name="dob">
               <label for="dob" class="shift-label">
                 Date of birth
               </label>
@@ -569,7 +567,7 @@
                 <img src="../public/icons/bleach-2.png" class="icon" alt="">
               </div>
               <ul id="countries">
-                <input type="search" id="search" placeholder="Search your 'country' here...">
+                <input type="search" autocomplete="off" id="search" placeholder="Search your 'country' here...">
                 <label for="search" hidden></label>
               </ul>
               <div class="error"></div>
@@ -810,6 +808,7 @@
       var step2Check = false;
       var step3Check = false;
       var step4Check = false;
+      var onlineStatus = false;
 
 
 
@@ -854,7 +853,7 @@
               profileBtn.style.padding = '2px';
               profileBtn.style.borderColor = 'var(--primary-color)';
               profileBtn.style.color = 'var(--font-main-color)';
-             // profileBtn.textContent = 'Passport uploaded';
+              // profileBtn.textContent = 'Passport uploaded';
               imagePreview.src = '../public/icons/user.png';
               profileBtn.textContent = 'Upload passport';
             }
@@ -876,10 +875,10 @@
         dobEle = personalInfo.querySelector('#dob'),
         nationalityEle = personalInfo.querySelector('#nationality');
       var error = document.querySelectorAll('.error');
-      
-      
-      
-     
+
+
+
+
 
 
       // Step-2 validation process 
@@ -908,13 +907,13 @@
         relationToCanEle = parentInformation.querySelector('#parent-relationship'),
         otherRelationshipEle = parentInformation.querySelector('#other-relationship'),
         parentPhoneEle = parentInformation.querySelector('#parent-phone');
- 
+
 
       // Step-5 validation process 
       var documentUpload = document.getElementById('document-uploads');
       var step5BtnPrevious = document.getElementById('step-5-btn-previous');
       var animationSpinner = document.querySelector('.animation-loading');
-   
+
 
 
       // Ststus controller
@@ -931,8 +930,7 @@
         var emailReg = /^(\_|[a-zA-Z])\w+\@\w{3,7}\.\w+$/;
         if (fullName.length <= 0) {
           error[0].textContent = 'Please enter your full name.';
-        }
-        else if (!fullName.match(/^[a-zA-Z\_]\w{3,50}\s[a-zA-Z\_]\w{3,50}/)) {
+        } else if (!fullName.match(/^[a-zA-Z\_]\w{3,50}\s[a-zA-Z\_]\w{3,50}/)) {
           error[0].textContent = 'Please provide your full name';
         } else {
           error[0].textContent = '';
@@ -940,8 +938,7 @@
 
         if (email.length <= 0) {
           error[1].textContent = 'Please enter your email address.';
-        }
-        else if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+        } else if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
           error[1].textContent = 'Please provide a valid email address';
         } else {
           error[1].textContent = '';
@@ -969,7 +966,7 @@
 
 
           personalInfo.style.transform = 'translateX(-300px)';
-       //   personalInfo.style.opacity = 0;
+          //   personalInfo.style.opacity = 0;
           personalInfo.style.display = 'none';
 
           contact.style.transform = 'translateX(0px)';
@@ -986,8 +983,6 @@
 
 
       });
-
-
 
       // Step-2 Event triggers
       step2BtnPrevious.addEventListener('click', () => {
@@ -1011,8 +1006,7 @@
 
         if (phone.length <= 0) {
           error[7].textContent = 'Please enter your phone number';
-        }
-        else if (!phone.match(numberReg)) {
+        } else if (!phone.match(numberReg)) {
           error[7].textContent = 'Please provide a valid phone number';
         } else {
           error[7].textContent = '';
@@ -1062,11 +1056,6 @@
 
       });
 
-
-
-
-
-
       // Step-3 Event triggers
       step3BtnPrevious.addEventListener('click', () => {
         contact.style.transform = 'translateX(0px)';
@@ -1078,7 +1067,6 @@
         previousEducation.style.display = 'none';
       });
 
-
       step3BtnNext.addEventListener('click', () => {
         var previousSchool = previousSchoolEle.value.trim(),
           yearOfpassing = yearOfpassingEle.value.trim(),
@@ -1087,25 +1075,24 @@
 
         if (previousSchool.length <= 0) {
           error[8].textContent = 'Please enter name of your previous school';
-        }
-        else {
+        } else {
           error[8].textContent = '';
         }
 
 
         if (yearOfpassing.length <= 0) {
           error[9].textContent = 'Please enter year of passing.';
-        } else if(yearOfpassing.length > 4) {
+        } else if (yearOfpassing.length > 4) {
           error[9].textContent = 'Invalid year';
-        } else if(parseInt(yearOfpassing) < 1990 || parseInt(yearOfpassing) > 2024) {
+        } else if (parseInt(yearOfpassing) < 1990 || parseInt(yearOfpassing) > 2024) {
           error[9].textContent = 'Please provide valid year of passing';
-        } else if(typeof(parseInt(yearOfpassing)) !== 'number' ) {
+        } else if (typeof(parseInt(yearOfpassing)) !== 'number') {
           error[9].textContent = 'String values is not valid.';
         } else {
-          error[9].textContent =  '';
+          error[9].textContent = '';
         }
-        
-        
+
+
 
 
         if (admissionType === 'Choose Admission Type...') {
@@ -1153,8 +1140,6 @@
 
       });
 
-
-
       // Step-4 Event triggers
       step4BtnPrevious.addEventListener('click', () => {
         previousEducation.style.transform = 'translateX(0px)';
@@ -1165,8 +1150,6 @@
         parentInformation.style.opacity = 0;
         parentInformation.style.display = 'none';
       });
-
-
 
       step4BtnNext.addEventListener('click', () => {
         var parentName = parentNameEle.value.trim(),
@@ -1179,15 +1162,14 @@
 
         if (parentName.length <= 0) {
           error[12].textContent = 'Please enter name of your parent/guardian';
-        }
-        else if(!parentName.match(/^[a-zA-Z\_]\w{3,50}\s[a-zA-Z\_]\w{3,50}/) ) {
+        } else if (!parentName.match(/^[a-zA-Z\_]\w{3,50}\s[a-zA-Z\_]\w{3,50}/)) {
           error[12].textContent = 'Please enter full name of your parent/guardian';
         } else {
           error[12].textContent = ''
         }
-        
-        
-    
+
+
+
         if (parentPhone.length <= 0) {
           error[14].textContent = 'Please enter your parent/guardian contact';
         } else if (!parentPhone.match(numberReg)) {
@@ -1234,9 +1216,7 @@
 
       });
 
-
       // Step-4 Event triggers
-
       step5BtnPrevious.addEventListener('click', () => {
         parentInformation.style.transform = 'translateX(0px)';
         parentInformation.style.opacity = 1;
@@ -1246,8 +1226,6 @@
         documentUpload.style.opacity = 0;
         documentUpload.style.display = 'none';
       });
-
-
 
       // Add event listener for input blur for real-time validation 
       var inputs = document.querySelectorAll('input');
@@ -1359,7 +1337,7 @@
             err.textContent = '';
           } else if (input.value.length <= 0 && input.id === 'parent-name') {
             err.textContent = 'Please enter name of your parent/guardian';
-          } 
+          }
 
 
           /*
@@ -1453,14 +1431,14 @@
 
       var selectTags = document.getElementsByClassName('select');
       Array.from(selectTags).forEach(selectTag => {
-        
+
         selectTag.addEventListener('click', () => {
           var ul = selectTag.nextElementSibling;
           selectIcon = selectTag.querySelector('.icon');
           ul.classList.toggle('ul-active');
           selectIcon.classList.toggle('rotate');
           console.log(selectIcon)
-          
+
         });
 
       });
@@ -1518,7 +1496,9 @@
           const data = await requestState.json();
           var stateList = document.getElementById('state-list');
 
-          data.forEach(({ state }) => {
+          data.forEach(({
+            state
+          }) => {
             var li = document.createElement('li');
             li.textContent = state;
             stateList.appendChild(li);
@@ -1541,7 +1521,9 @@
           state.addEventListener('click', () => {
             var activeState = state.textContent;
 
-            var filterLocalG = data.filter(({ state }) => {
+            var filterLocalG = data.filter(({
+              state
+            }) => {
               return state === activeState;
             });
 
@@ -1616,7 +1598,36 @@
         }
       })
 
-        
+
+      // Checking for the internet connection to avoid unnecessary errors!
+      async function checkRealInternetConnection() {
+        try {
+          // Attempt to fetch a small, lightweight file from a reliable source
+          const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+
+          if (response.ok) {
+            console.log("You have a working internet connection!");
+            onlineStatus = true;
+            document.querySelector('.internet-connection').textContent = "";
+
+          } else {
+            throw new Error("No internet access");
+          }
+        } catch (error) {
+          console.log("You are offline or cannot access the internet.");
+          onlineStatus = false;
+          document.querySelector('.internet-connection').textContent = "Internet connection required!";
+        }
+
+        console.log("online status: ", onlineStatus);
+      }
+
+      // Initial check
+      checkRealInternetConnection();
+
+      // Periodically re-check (optional)
+      setInterval(checkRealInternetConnection, 3000); // Every 5 seconds
+
       var emailError = document.querySelector('.email-error');
       var form = document.querySelector('form');
       form.addEventListener('submit', async function(e) {
@@ -1669,15 +1680,15 @@
         var admissionClassValue = document.getElementById('admission-class').textContent;
 
         var relationship = document.getElementById('parent-relationship').textContent;
-        
-         let signUp = document.querySelector('.sign-up');
-         
-         
-         let em = document.querySelector('#email');
-         
-         if(!em.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-            signUp.textContent = '';
-          }
+
+        let signUp = document.querySelector('.sign-up');
+
+
+        let em = document.querySelector('#email');
+
+        if (!em.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+          signUp.textContent = '';
+        }
 
 
         try {
@@ -1687,50 +1698,46 @@
           formData.append('nationality', nationalityValue);
           formData.append('state', stateValue);
           formData.append('localG', localValue);
-         
+
           formData.append('admission_type', admissionTypeValue);
           formData.append('admission_class', admissionClassValue);
           formData.append('guardian_relationship', relationship);
-          
-          
-          if (step1Check === true && step2Check === true && step3Check === true && step4Check === true && isImageUpload && (password.value.length >= 6) && (confirm.value === password.value)) {
-          signUp.style.color = "black";
-          signUp.style.fontSize = "18px";
-          signUp.textContent = "Sign up";
-          animationSpinner.style.display = 'flex';
+
+
+          if (onlineStatus === true && step1Check === true && step2Check === true && step3Check === true && step4Check === true && isImageUpload && (password.value.length >= 6) && (confirm.value === password.value)) {
+            signUp.style.color = "black";
+            signUp.style.fontSize = "18px";
+            signUp.textContent = "Sign up";
+            animationSpinner.style.display = 'flex';
             const res = await fetch('../include/form.php', {
               method: "POST",
               body: formData
             });
 
             if (!res.ok) {
-             // throw Error("Server error, try again!");
+              alert(res.message)
+              // throw Error("Server error, try again!");
             }
 
 
             const result = await res.json();
-           
-          
-        
+
             // Redirect user to change if it's exists 
-            
-           if(result["email"] === "Exist") {
-           
-            contact.style.display = "none"
-             previousEducation.style.display = "none";
-             parentInformation.style.display = "none"; 
-             documentUpload.style.display = "none"; 
-             personalInfo.style.transform = 'translateX(0px)';         
-             personalInfo.style.display = "block";
-            emailError.textContent = "That email is in used already."
+            if (result["email"] === "Exist") {
+              contact.style.display = "none"
+              previousEducation.style.display = "none";
+              parentInformation.style.display = "none";
+              documentUpload.style.display = "none";
+              personalInfo.style.transform = 'translateX(0px)';
+              personalInfo.style.display = "block";
+              emailError.textContent = "That email is in used already."
             }
-            
+
             // Everything is clear to redirect:
-            if(result.redirect) {
-                
-               window.location =  "./verify.php";
-            } 
-            
+            if (result.redirect) {
+              window.location = "./verify.php";
+            }
+
             // Sever-side may throw an errors
             // when client-side validation 
             //  failed, so it's
@@ -1738,21 +1745,22 @@
             // for each input field that has error
             // you can find those errors in
             // the 'result' response.
-            
+
           } else {
-         
-          signUp.style.color = "red";
-          signUp.style.fontSize = "13px";
-          signUp.textContent = "We're unable to process your bio data due to errors. Please review the form and correct any issues.";
+
+            signUp.style.color = "red";
+            signUp.style.fontSize = "13px";
+            signUp.textContent = "We're unable to process your bio data due to errors. Please review the form and correct any issues.";
           }
 
 
         } catch (error) {
-          alert(error)
+
+          console.log(error)
         } finally {
-        //  setTimeout(() => {
-            animationSpinner.style.display = 'none';
-       //   }, 2000);
+          //  setTimeout(() => {
+          animationSpinner.style.display = 'none';
+          //   }, 2000);
         }
 
 

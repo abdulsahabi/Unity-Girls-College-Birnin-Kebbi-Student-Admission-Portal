@@ -178,8 +178,8 @@
       Login your account
     </div>
 
-    <form id="signup-form">
-      
+    <form id="signup-form" autocomplete="off">
+
       <div class="input-group">
         <label for="email">email address</label>
         <input type="text" name="email" id="email">
@@ -199,35 +199,35 @@
       No account? <a href="./sign_up.php" class="a">Sign up <img src="../public/icons/right-arrow.png" alt="" class="learn-icon"></a>
     </div>
   </div>
-  
-  
+
+
   <script>
     let showButton = document.querySelector(".show");
     let passwordInput = document.getElementById("password");
-   showButton.addEventListener("click", () => {
-     
-     if(passwordInput.type === 'password') {
-       showButton.src = "../public/icons/hidden.png";
-       passwordInput.type = 'text'
-     } else {
-       showButton.src = "../public/icons/eye (1).png";
-       passwordInput.type = 'password'
-       
-     }
-   });
-   
-   passwordInput.addEventListener('input', () => {
-     showButton.style.display = 'block';
-   });
-   
-   passwordInput.addEventListener('blur', () => {
-     if(passwordInput.value.trim() === '') {
-      showButton.style.display = 'none';
-     }
-   });
-   
-   var error = document.querySelectorAll(".error");
-  // error[0].textContent = "yy"
+    showButton.addEventListener("click", () => {
+
+      if (passwordInput.type === 'password') {
+        showButton.src = "../public/icons/hidden.png";
+        passwordInput.type = 'text'
+      } else {
+        showButton.src = "../public/icons/eye (1).png";
+        passwordInput.type = 'password'
+
+      }
+    });
+
+    passwordInput.addEventListener('input', () => {
+      showButton.style.display = 'block';
+    });
+
+    passwordInput.addEventListener('blur', () => {
+      if (passwordInput.value.trim() === '') {
+        showButton.style.display = 'none';
+      }
+    });
+
+    var error = document.querySelectorAll(".error");
+    // error[0].textContent = "yy"
     document.getElementById("signup-form").addEventListener("submit", async function(e) {
       e.preventDefault();
       let formData = new FormData(this);
@@ -237,29 +237,29 @@
           body: formData
         });
         const result = await res.json();
-        
-      
-         
-        if(result.redirect) {
-              window.location.assign("./admin.php")
+
+
+
+        if (result.redirect) {
+          window.location.assign("./admin.php")
         }
-        
-        if(result.email) {
-          
-            error[0].textContent  = result.email
-      
-      
-      
-        } else { 
-             error[0].textContent  = ""
-        }
-       
-        if(result.password) {
-            error[1].textContent = result.password
+
+        if (result.email) {
+
+          error[0].textContent = result.email
+
+
+
         } else {
-             error[1].textContent  = ""
+          error[0].textContent = ""
         }
-        
+
+        if (result.password) {
+          error[1].textContent = result.password
+        } else {
+          error[1].textContent = ""
+        }
+
       } catch (err) {
         console.error("Error:", err);
       }

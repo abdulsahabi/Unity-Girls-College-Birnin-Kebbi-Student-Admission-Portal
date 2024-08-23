@@ -84,7 +84,7 @@ $user = $stmt->fetch();
       padding: 30px 0;
       margin-top: 60px;
       position: relative;
-      
+
     }
 
 
@@ -245,7 +245,7 @@ $user = $stmt->fetch();
     .rotate-icon {
       transform: rotate(60deg);
     }
-    
+
     .bn {
       background-color: #9010BF;
       width: 335px;
@@ -256,26 +256,26 @@ $user = $stmt->fetch();
       transition: 0.3s;
       margin-top: 5px;
     }
-    
+
     .bn:hover {
       background: white;
       color: black;
     }
-    
+
     .not-deliver {
       font-family: Poppin;
       color: grey;
       font-size: 14px;
       width: 320px;
       padding: 12px;
-      text-align: center ;
+      text-align: center;
       margin-top: 20px;
     }
-    
+
     .button {
       width: 315px;
       background-color: #9010BF;
-      text-align: center ;
+      text-align: center;
       padding: 14px 10px;
       font-family: Poppin;
       border-radius: 15px;
@@ -283,45 +283,46 @@ $user = $stmt->fetch();
       transition: 0.3s;
       color: white;
     }
-    
+
     .veri {
       font-size: 25px;
       font-family: Poppin_bold;
       color: #9010BF;
       margin-bottom: 20px;
     }
-    
+
     input::placeholder {
-      text-align: center ;
+      text-align: center;
       font-family: Poppin;
     }
-    
+
     input {
-      text-align: center ;
+      text-align: center;
       font-family: Poppin;
     }
-    
+
     .header {
       font-family: Poppin_bold;
-      color: black ;
+      color: black;
       font-size: 16px;
       width: 320px;
     }
-    
+
     p {
       font-family: Poppin;
       color: grey;
     }
-    
+
     .icon-wrap {
       width: 350px;
-      text-align: center ;
+      text-align: center;
       padding: 10 0px;
     }
+
     .icon-var {
       width: 100px;
     }
-    
+
     .loading-wrapper {
       width: 400px;
       height: 680px;
@@ -333,40 +334,42 @@ $user = $stmt->fetch();
       border: 1px solid lightgrey;
       padding: 30px 0;
       margin-top: 60px;
-      flex-direction: column ;
+      flex-direction: column;
       position: absolute;
       top: -60px;
       z-index: 2;
       opacity: .8;
-      
+
     }
-    
+
     .loader-icon {
       width: 30px;
-      animation: spinner .5s ease  infinite;
+      animation: spinner .5s ease infinite;
     }
-    
-    
+
+
     .load-txt {
       font-size: 18px;
       font-weight: bold;
-      
+
     }
-    
+
     @keyframes spinner {
       0% {
         transform: rotate(0);
-      } 100% {
+      }
+
+      100% {
         transform: rotate(360deg);
       }
     }
-    
+
     p {
       font-size: 12px;
       width: 300px;
     }
-    
-    
+
+
     #resend {
       display: none;
       margin-top: 20px;
@@ -381,90 +384,87 @@ $user = $stmt->fetch();
       <div>
         <img src="../public/icons/loading.png" alt="Loader image" class="loader-icon">
       </div>
-      <div >
-        
+      <div>
+
       </div>
       <div class="load-txt">Please wait...</div>
     </div>
-    
+
     <div class="input-container">
       <div class="steps">
         <div class="veri">
-          VERIFICATION 
+          VERIFICATION
         </div>
       </div>
       <div class="form-wrapper">
 
-      <form>
-        
-        <div class="icon-wrap">
-          <img class="icon-var" src="../public/icons/verification.png" alt="">
-        </div>
-        <div class="header">
-          We sent a code to <?php echo $user["email"]; ?>
-        </div>
-        <p>
-        To complete the account verification process, please enter the verification code you received via email in the space provided below. If you do not see the email in your inbox, please check your spam or junk folder
-        </p>
-         <input type="text" name="digits" id="digits" placeholder="Enter the 6-digit code">
-         <div class="error"></div>
-        
-          <input type="text" id="expired" value="<?php echo $user[
-            "expiredAt"
-          ]; ?>" hidden >
-          
-           <input type="submit" value="Verify" class="bn">
-         
-         
-         <div class="not-deliver">Code expires in <span id="time"></span></div>
-         <div class="button" id="resend" >
-           Resend
-         </div>
-      </form>
+        <form>
 
+          <div class="icon-wrap">
+            <img class="icon-var" src="../public/icons/verification.png" alt="">
+          </div>
+          <div class="header">
+            We sent a code to <?php echo $user["email"]; ?>
+          </div>
+          <p>
+            To complete the account verification process, please enter the verification code you received via email in the space provided below. If you do not see the email in your inbox, please check your spam or junk folder
+          </p>
+          <input type="text" name="digits" id="digits" placeholder="Enter the 6-digit code">
+          <div class="error"></div>
+
+          <input type="text" id="expired" value="<?php echo $user["expiredAt"]; ?>" hidden>
+
+          <input type="submit" value="Verify" class="bn">
+
+
+          <div class="not-deliver">Code expires in <span id="time"></span></div>
+          <div class="button" id="resend">
+            Resend
+          </div>
+        </form>
+
+      </div>
     </div>
   </div>
-  </div>
-  
-  
+
+
   <script>
-    
     let form = document.querySelector('form');
     let error = document.querySelector('.error');
     let verifyInput = document.querySelector('#digits');
     var resendBtn = document.getElementById("resend");
     let countElement = document.querySelector('.not-deliver');
-    
+
     countElement.style.display = 'none';
 
     function countdown() {
-  const clear = setInterval(() => {
-    countElement.style.display = 'block';
-    let displayExpire = document.getElementById('time');
-    let expiredAt = document.getElementById('expired').value;
-    
-    // Fix the syntax error in parsing the date
-    const expireDate = new Date(expiredAt.replace(" ", "T") + "Z");
-    const currentDate = new Date();
-    const time = currentDate.getTime() - expireDate.getTime();
-    const timeInSeconds = Math.floor(time / 1000);
-    const expiredIn = 600 - timeInSeconds;
-    const minutes = Math.floor(expiredIn / 60);
-    const seconds = expiredIn % 60;
-    const sec = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-    displayExpire.textContent = sec;
-    
-    if (expiredIn < 0) {
-      clearInterval(clear);
-      resendBtn.style.display = 'block';
-      countElement.style.display = 'none';
-    }
-  }, 1000);
-}
+      const clear = setInterval(() => {
+        countElement.style.display = 'block';
+        let displayExpire = document.getElementById('time');
+        let expiredAt = document.getElementById('expired').value;
 
-    window.onload = countdown() 
-    
-    form.addEventListener('submit', async function (e) {
+        // Fix the syntax error in parsing the date
+        const expireDate = new Date(expiredAt.replace(" ", "T") + "Z");
+        const currentDate = new Date();
+        const time = currentDate.getTime() - expireDate.getTime();
+        const timeInSeconds = Math.floor(time / 1000);
+        const expiredIn = 600 - timeInSeconds;
+        const minutes = Math.floor(expiredIn / 60);
+        const seconds = expiredIn % 60;
+        const sec = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        displayExpire.textContent = sec;
+
+        if (expiredIn < 0) {
+          clearInterval(clear);
+          resendBtn.style.display = 'block';
+          countElement.style.display = 'none';
+        }
+      }, 1000);
+    }
+
+    window.onload = countdown()
+
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
       let verifyCode = new FormData(this);
       try {
@@ -472,50 +472,49 @@ $user = $stmt->fetch();
           method: "POST",
           body: verifyCode
         });
-        
+
         const result = await res.json();
-      
-        if(result.error) {
+
+        if (result.error) {
           error.textContent = result.error;
-        
-      } else {
+
+        } else {
           error.textContent = ''
-      }
-      
-      if(result.redirect) {
-        window.location = "./dashboard.php";
-      }
-      
-      } catch(err) {
+        }
+
+        if (result.redirect) {
+          window.location = "./dashboard.php";
+        }
+
+      } catch (err) {
         alert(err.message)
       }
-      
+
     });
-    
-    
+
+
     // Resend Another code
     var loader = document.querySelector('.loading-wrapper');
-    
-    
+
+
     resendBtn.addEventListener("click", async () => {
       try {
         loader.style.display = "flex";
-       const res = await fetch("../include/resend.php");
-       const result = await res.json();
-       if(result.redirect) {
-           window.location = "./verify.php"
-       }
-        
-      } catch(err) {
+        const res = await fetch("../include/resend.php");
+        const result = await res.json();
+        if (result.redirect) {
+          window.location = "./verify.php"
+        }
+
+      } catch (err) {
         alert(err.message)
       } finally {
-         // setTimeout(() => {
+        // setTimeout(() => {
         loader.style.display = "none";
         //  },3000);
       }
-      
+
     });
-   
   </script>
 </body>
 
