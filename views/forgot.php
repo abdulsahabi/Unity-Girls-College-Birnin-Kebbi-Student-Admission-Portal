@@ -323,9 +323,6 @@
     }
 
 
-
-    }
-
     .input-group {
       position: relative;
     }
@@ -494,18 +491,18 @@
       display: none;
 
     }
-    
+
     #resend {
       margin-top: 15px;
       display: none;
     }
-    
+
     #expired {
       display: none;
     }
-    
-    
-        .anime {
+
+
+    .anime {
       width: 305px;
       padding: 15px;
       font-family: Poppin;
@@ -519,35 +516,38 @@
       transition: .2s;
       display: none;
     }
-    
+
     .anime::before {
-  display: block;
-  content: "Please wait.";
-  width: 300px;
-  animation-name: loading;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-}
+      display: block;
+      content: "Please wait.";
+      width: 300px;
+      animation-name: loading;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+    }
 
-@keyframes loading {
-  0% {
-    content: "Please wait";
-  }
-  35% {
-    content: "Please wait.";
-  }
-  70% {
-    content: "Please wait..";
-  } 100% {
-    content: "Please wait...";
-  }
-}
+    @keyframes loading {
+      0% {
+        content: "Please wait";
+      }
 
-#change-btn {
-    width: 300px;
-    margin: 15px 0;
-}
+      35% {
+        content: "Please wait.";
+      }
 
+      70% {
+        content: "Please wait..";
+      }
+
+      100% {
+        content: "Please wait...";
+      }
+    }
+
+    #change-btn {
+      width: 300px;
+      margin: 15px 0;
+    }
   </style>
 </head>
 
@@ -567,13 +567,13 @@
           <div class="div" id="find-container">
             <div class="input-group">
               <input type="text" id="email" name="email">
-              <label for="email" class="shift-label" >
+              <label for="email" class="shift-label">
                 Find by email
               </label>
               <div class="error"></div>
             </div>
 
-            <div class=" anime anime-1"> </div>  
+            <div class=" anime anime-1"> </div>
             <div id="find" class="button">
               Find my account
             </div>
@@ -608,8 +608,8 @@
               <div class="button" id="verify-btn">
                 Verify
               </div>
-         
-              <input type="text" value="2024-05-24 14:34:25"  id="expiredAt" hidden>
+
+              <input type="text" value="2024-05-24 14:34:25" id="expiredAt" hidden>
               <div class="not-deliver" id="expired">Code expires in <span id="time">10:00</span></div>
               <div class="button" id="resend">
                 Resend
@@ -618,7 +618,7 @@
 
             <div class="change-wrapper">
               <div class="input-group">
-                <input type="password" name="password" id="password" >
+                <input type="password" name="password" id="password">
                 <label for="password" class="shift-label">Password</label>
                 <div class="error" id="er1"></div>
                 <!--
@@ -631,16 +631,16 @@
                 <div class="error" id="er2"></div>
                 <!--<div class="show">Show</div>-->
               </div>
-              <button type="submit" class="button" id="change-btn" >
+              <button type="submit" class="button" id="change-btn">
                 Create new password
               </button>
             </div>
           </div>
         </form>
 
-      <div class="show"></div>
+        <div class="show"></div>
+      </div>
     </div>
-  </div>
   </div>
 
 
@@ -648,8 +648,8 @@
     document.addEventListener('DOMContentLoaded', (event) => {
 
 
-    var expiredAt = document.getElementById('expiredAt');
-    
+      var expiredAt = document.getElementById('expiredAt');
+
 
 
 
@@ -695,27 +695,27 @@
               findMyAccount.style.display = "none"
               const findForm = new FormData();
               findForm.append('email', emailValue);
-               const findReq = await fetch("../include/forgot.php", {
-                 method: 'POST',
-                 body: findForm
-               });
+              const findReq = await fetch("../include/forgot.php", {
+                method: 'POST',
+                body: findForm
+              });
 
-               const result = await findReq.json();
+              const result = await findReq.json();
               loading.style.display = "block";
-              
+
               if (result.redirect) {
-               container.style.minHeight = '550px';
+                container.style.minHeight = '550px';
                 findContainer.style.display = 'none';
                 userData.style.display = 'block';
-    
+
                 // Outputs the student data on the container 
                 fullName.textContent = result['fullname'];
                 admissionId.textContent = `UNT/24/${result['admission_no']}`;
                 profileImage.src = `../public/uploads/${result.image}`;
                 studentEmail.forEach(em => em.textContent = result['email']);
                 setExpiredAtValue(result["expiredAt"]);
-                  
-                
+
+
                 // Encoding student email address:
                 var emailEncodeTag = document.querySelectorAll('.email-encode');
                 emailEncodeTag.forEach(emailEncodeTxt => {
@@ -727,14 +727,14 @@
 
                 header.textContent = 'Verify Account';
               }
-              
-              if(result.error) {
+
+              if (result.error) {
                 errors[0].textContent = result.error
               }
 
 
             } else {
-                errors[0].textContent = 'Invalid email'
+              errors[0].textContent = 'Invalid email'
             }
 
 
@@ -743,8 +743,8 @@
           alert(err.message)
           console.log(err);
         } finally {
-             loading.style.display = "none";
-             findMyAccount.style.display = "block";
+          loading.style.display = "none";
+          findMyAccount.style.display = "block";
         }
 
 
@@ -798,26 +798,26 @@
         });
       });
 
-     /*
-      var cpass = document.querySelector('#cpassword');
+      /*
+       var cpass = document.querySelector('#cpassword');
 
-      cpass.addEventListener('blur', () => {
-        if (cpass.value.trim().length > 0) {
-          shows[1].style.display = 'block';
-        } else {
-          shows[1].style.display = 'none';
-        }
-      });
+       cpass.addEventListener('blur', () => {
+         if (cpass.value.trim().length > 0) {
+           shows[1].style.display = 'block';
+         } else {
+           shows[1].style.display = 'none';
+         }
+       });
 
-     var pass = document.querySelector('#password');
+      var pass = document.querySelector('#password');
 
-      pass.addEventListener('blur', () => {
-        if (pass.value.trim().length > 0) {
-          shows[0].style.display = 'block';
-        } else {
-          shows[0].style.display = 'none';
-        }
-      }); */
+       pass.addEventListener('blur', () => {
+         if (pass.value.trim().length > 0) {
+           shows[0].style.display = 'block';
+         } else {
+           shows[0].style.display = 'none';
+         }
+       }); */
 
 
 
@@ -836,15 +836,15 @@
             siblingEle.style.color = 'var(--primary_color)';
           }
 
-        /*  if (input.id === 'password') {
-            shows[0].style.display = 'block';
-          }
+          /*  if (input.id === 'password') {
+              shows[0].style.display = 'block';
+            }
 
 
-          if (input.id === 'cpassword') {
-            shows[1].style.display = 'block';
+            if (input.id === 'cpassword') {
+              shows[1].style.display = 'block';
 
-          } */
+            } */
 
 
         });
@@ -853,36 +853,36 @@
       });
 
 
-/*
+      /*
 
-      shows[1].addEventListener('click', () => {
-       alert("confirmed")
-        if (inputs[3].id === 'cpassword' && inputs[3].type === 'password') {
-          inputs[3].type = 'text';
-          shows[1].textContent = 'Hidden';
-        } else if (inputs[3].id === 'cpassword' && inputs[3].type === 'text') {
-          inputs[3].type = 'password';
-          shows[1].textContent = 'Show';
-        }
+            shows[1].addEventListener('click', () => {
+             alert("confirmed")
+              if (inputs[3].id === 'cpassword' && inputs[3].type === 'password') {
+                inputs[3].type = 'text';
+                shows[1].textContent = 'Hidden';
+              } else if (inputs[3].id === 'cpassword' && inputs[3].type === 'text') {
+                inputs[3].type = 'password';
+                shows[1].textContent = 'Show';
+              }
 
-      });
-
-
-
-      shows[0].addEventListener('click', () => {
-        alert("Password")
-        if (inputs[2].id === 'password' && inputs[2].type === 'password') {
-          inputs[2].type = 'text';
-          shows[0].textContent = 'Hidden';
-        } else if (inputs[2].id === 'password' && inputs[2].type === 'text') {
-          inputs[2].type = 'password';
-          shows[0].textContent = 'Show';
-        }
-
-      });
+            });
 
 
-*/
+
+            shows[0].addEventListener('click', () => {
+              alert("Password")
+              if (inputs[2].id === 'password' && inputs[2].type === 'password') {
+                inputs[2].type = 'text';
+                shows[0].textContent = 'Hidden';
+              } else if (inputs[2].id === 'password' && inputs[2].type === 'text') {
+                inputs[2].type = 'password';
+                shows[0].textContent = 'Show';
+              }
+
+            });
+
+
+      */
       var verifyBtn = document.getElementById('verify-btn');
       var changeContainer = document.querySelector('.change-wrapper');
       var verifyContainer = document.querySelector('.verify-wrapper');
@@ -890,51 +890,51 @@
 
 
       verifyBtn.addEventListener('click', async () => {
-        
-        var verifyCode = studentCode.value.trim();
-        var verifyCode = studentCode.value.trim();
-     
-        
-      let verifyForm = new FormData();
-      verifyForm.append("digits", verifyCode)
-   
-      try {
-       const res = await fetch("../include/re-verify-forgot-password.php", {
-          method: "POST",
-          body: verifyForm
-        });
-        
-        const result = await res.json();
-      
-       if(result.error) {
-          errors[1].textContent = result.error;
-          } else {
-          errors[1].textContent = ''
-          }
-      
-      if(result.redirect) {
-        errors[1].textContent = '';
-        changeContainer.style.display = 'block';
-        verifyContainer.style.display = 'none';
-      }
-      
-      } catch(err) {
-        alert(err.message)
-      }       
-        
 
-   /*
-        if (verifyCode.length === 6 && verifyCode !== '' && verifyCode === digitsValue) {
-          errors[1].textContent = '';
-          changeContainer.style.display = 'block';
-          verifyContainer.style.display = 'none';
-        } else {
-          errors[1].textContent = 'Please provide 6-digit code emailed you.';
-          changeContainer.style.display = 'none';
-          verifyContainer.style.display = 'block';
+        var verifyCode = studentCode.value.trim();
+        var verifyCode = studentCode.value.trim();
+
+
+        let verifyForm = new FormData();
+        verifyForm.append("digits", verifyCode)
+
+        try {
+          const res = await fetch("../include/re-verify-forgot-password.php", {
+            method: "POST",
+            body: verifyForm
+          });
+
+          const result = await res.json();
+
+          if (result.error) {
+            errors[1].textContent = result.error;
+          } else {
+            errors[1].textContent = ''
+          }
+
+          if (result.redirect) {
+            errors[1].textContent = '';
+            changeContainer.style.display = 'block';
+            verifyContainer.style.display = 'none';
+          }
+
+        } catch (err) {
+          alert(err.message)
         }
-        
-     */   
+
+
+        /*
+             if (verifyCode.length === 6 && verifyCode !== '' && verifyCode === digitsValue) {
+               errors[1].textContent = '';
+               changeContainer.style.display = 'block';
+               verifyContainer.style.display = 'none';
+             } else {
+               errors[1].textContent = 'Please provide 6-digit code emailed you.';
+               changeContainer.style.display = 'none';
+               verifyContainer.style.display = 'block';
+             }
+             
+          */
       });
 
       // Last-change request API
@@ -945,7 +945,7 @@
         var admission = admissionId.textContent;
         var emailAddress = studentEmail[0].textContent;
         var verifyCode = studentCode.value.trim();
-        
+
 
         var dataObj = {
           admissionId: admission,
@@ -953,15 +953,15 @@
           verifyCode: verifyCode,
           newPassword: password
         }
-        
+
         try {
           if (password !== retypePass) {
             errors[3].textContent = 'Password mismatched!';
             return;
           }
 
-          
-          
+
+
           console.log(dataObj);
 
         } catch (err) {
@@ -971,114 +971,137 @@
 
     });
 
-function countdown() {
-  var resendBtn = document.getElementById('resend');
-  resendBtn.style.display = "none";
-  const interval = setInterval(() =>{
-     const expiredAtElement = document.getElementById('expired');
-     const expireCurrentDate = document.getElementById('expiredAt').value;
-     var displayTime = document.getElementById('time');
-     const expireDate = new Date(expireCurrentDate.replace(" ", "T") + "Z");
-     const expireTime = 60;// * 10;
-     const currentDate = new Date();
-     const time = Math.floor((currentDate.getTime() - expireDate.getTime()) / 1000);
-     
-    const timeDFF = expireTime - time;
-     const minutes = Math.floor(timeDFF / 60);
-     const seconds = timeDFF % 60;
-     
-     const timeTxt = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-     
-     displayTime.textContent = timeTxt;
-     
-     
-    
-    if(timeDFF < 0) {
-      expiredAtElement.style.display = "none";
-      resendBtn.style.display = "block";
-    } else {
-      expiredAtElement.style.display = "block";
+    function countdown() {
+      var resendBtn = document.getElementById('resend');
       resendBtn.style.display = "none";
+      const interval = setInterval(() => {
+        const expiredAtElement = document.getElementById('expired');
+        const expireCurrentDate = document.getElementById('expiredAt').value;
+        var displayTime = document.getElementById('time');
+        const expireDate = new Date(expireCurrentDate.replace(" ", "T") + "Z");
+        const expireTime = 60; // * 10;
+        const currentDate = new Date();
+        const time = Math.floor((currentDate.getTime() - expireDate.getTime()) / 1000);
+
+        const timeDFF = expireTime - time;
+        const minutes = Math.floor(timeDFF / 60);
+        const seconds = timeDFF % 60;
+
+        const timeTxt = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+        displayTime.textContent = timeTxt;
+
+
+
+        if (timeDFF < 0) {
+          expiredAtElement.style.display = "none";
+          resendBtn.style.display = "block";
+        } else {
+          expiredAtElement.style.display = "block";
+          resendBtn.style.display = "none";
+        }
+
+      }, 1000);
     }
-     
-  }, 1000);
-}
 
 
- countdown()   
+    countdown()
 
 
-// Re-send the verification code for a forgot password
+    // Re-send the verification code for a forgot password
 
-var resendBtn = document.getElementById("resend");
+    var resendBtn = document.getElementById("resend");
 
-//resendBtn.style.display = "block"
-resendBtn.addEventListener("click", async () => {
-    try {
+    //resendBtn.style.display = "block"
+    resendBtn.addEventListener("click", async () => {
+      try {
         const response = await fetch("../include/resend.php");
-         if(!response.ok) {
-            throw Error("Could not resend verify code.")
+        if (!response.ok) {
+          throw Error("Could not resend verify code.")
         }
         const result = await response.json();
-        if(result.redirect) {
-         resendBtn.style.display = "none";
-         setExpiredAtValue(result["expiredAt"]);
+        if (result.redirect) {
+          resendBtn.style.display = "none";
+          setExpiredAtValue(result["expiredAt"]);
         }
-    } catch(err) {
+      } catch (err) {
         alert(err.message);
+      }
+    })
+
+
+    // Add an event listener to detect changes to the expiredAt input field
+
+    expiredAt.addEventListener('input', () => {
+      countdown();
+    });
+
+    function setExpiredAtValue(new_date) {
+      expiredAt.value = new_date;
+      const event = new Event('input', {
+        bubbles: true,
+        cancelable: true
+      });
+      expiredAt.dispatchEvent(event);
     }
-})
-
-
-// Add an event listener to detect changes to the expiredAt input field
-
-expiredAt.addEventListener('input', () => {
-    countdown();
-});
-
-function setExpiredAtValue(new_date) {
-  expiredAt.value = new_date;
-  const event = new Event('input', {
-    bubbles: true,
-    cancelable: true 
-  });
-  expiredAt.dispatchEvent(event); 
-}
 
     /* Final stage of a password changing */
     const createPassword = document.querySelector("form")
-   
- 
-    createPassword.addEventListener("submit", function  (e)  {
-        e.preventDefault();
-        let passwordInput = e.target.password.value;
-        let confirmInput = e.target.cpassword.value;
-  
-        let er1 = document.getElementById("er1")
-        let er2 = document.getElementById("er2")
-      
-      
-        alert("Submitted")
-        alert(passwordInput)
-        if(passwordInput.trim() === "") {
-            er1.textContent = "Field cannot be empty.";
-        } else if(passwordInput.length <= 5) {
-            er1.textContent = "Minimum password length is 6 characters.";
-        } else {
-              er1.textContent = ""
-        }
-        
-        if(confirmInput.trim() !== passwordInput.trim()) {
-              er2.textContent = "Password mismatch.";
-        } else {
-            er2.textContent = "";
-        }
-        
-        if((confirmInput.trim() === passwordInput.trim()) && passwordInput.length >= 6) {
-            alert("Everything is clear!")
-        }
-    })
 
+
+    createPassword.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      let passwordInput = e.target.password.value;
+      let confirmInput = e.target.cpassword.value;
+      let userEmail = e.target.email.value;
+
+      console.log(userEmail, passwordInput);
+
+      let er1 = document.getElementById("er1")
+      let er2 = document.getElementById("er2")
+
+      if (passwordInput.trim() === "") {
+        er1.textContent = "Field cannot be empty.";
+      } else if (passwordInput.length <= 5) {
+        er1.textContent = "Minimum password length is 6 characters.";
+      } else {
+        er1.textContent = ""
+      }
+
+      if (confirmInput.trim() !== passwordInput.trim()) {
+        er2.textContent = "Password mismatch.";
+      } else {
+        er2.textContent = "";
+      }
+
+      if ((confirmInput.trim() === passwordInput.trim()) && passwordInput.length >= 6) {
+
+        let verifyForm = new FormData();
+        verifyForm.append("password", passwordInput.trim())
+        verifyForm.append("email", userEmail.trim())
+
+        try {
+          const res = await fetch("../include/set_password.php", {
+            method: "POST",
+            body: verifyForm
+          });
+
+          const result = await res.json();
+
+          if (!res.ok) {
+            alert("Error is occurred, please try again!")
+          }
+
+          if (result.redirect) {
+            window.location = "http://localhost/unity/views/login.php";
+          }
+
+        } catch (err) {
+          alert(err.message)
+        }
+
+      }
+    })
   </script>
 </body>
 

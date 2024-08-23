@@ -350,3 +350,7 @@ WHERE
 "
 );
 
+define(
+  "UPDATEPASSWORDWITHEMAIL",
+  "UPDATE candidate_personal_info SET pass = ? WHERE email = ?;"
+);

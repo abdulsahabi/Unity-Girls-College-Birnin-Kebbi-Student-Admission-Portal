@@ -15,7 +15,7 @@ $admin_id = $_SESSION["admin_id"];
 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  
+
   $post = new Post($_POST);
   $post->uniqueImageName($_FILES);
   $post->validatePost();
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       $data["title"],
       $data["body"],
       $data["feature_image"],
-      1,
+      $admin_id,
       date("Y:m:d H:i:s"),
     ]);
     if ($stmt->rowCount() > 0) {
@@ -46,5 +46,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   header("Location: ../index.php");
   exit();
 }
-
-?>

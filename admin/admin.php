@@ -74,7 +74,7 @@ $complains = $complainsStmt->fetchAll();
       position: relative;
       min-height: 100vh;
       width: 100%;
-      overflow: hidden;
+
       /*   background: #F9F2FCff; */
       color: #939290;
     }
@@ -83,24 +83,26 @@ $complains = $complainsStmt->fetchAll();
 
     /* Two sections: Sidebar and Main sidebar contents*/
     .sidebar {
-      width: 280px;
-      height: 100%;
+      width: 350px;
+      height: 600px;
       background: white;
       box-shadow: 0 0 1px lightgrey;
       position: fixed;
       /* Change to fixed */
-      left: 0px;
       border-right: 1px solid lightgrey;
+      border-radius: 50px;
       z-index: 1;
 
-      background: #FBF7FDff;
+      background: white;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
+      margin: 20px;
+      margin-bottom: 30px;
     }
 
-    .main-sidebar {}
+
 
     /* Styling the footer container */
     footer {
@@ -108,7 +110,7 @@ $complains = $complainsStmt->fetchAll();
       width: cal(100%-230px);
       margin-left: 230px;
       height: 100px;
-
+      font-size: 12px;
       left: 0;
       bottom: 0;
       display: flex;
@@ -147,6 +149,7 @@ $complains = $complainsStmt->fetchAll();
     .dashboard {
       width: 280px;
       height: 50px;
+
       display: flex;
       background: #ffffff;
       align-items: center;
@@ -161,17 +164,19 @@ $complains = $complainsStmt->fetchAll();
     }
 
     .dash-title {
-      font-size: 18px;
+      font-size: 15px;
       font-family: Poppin_bold;
       color: #9010BF;
+      margin: 12px;
     }
 
     .user-image {
+      margin-top: 10px;
       width: 70px;
       object-fit: cover;
       height: 70px;
       border-radius: 50%;
-      margin-bottom: 5px;
+      margin-bottom: 0px;
       box-shadow: 1px 1px 5px lightgray;
     }
 
@@ -185,27 +190,25 @@ $complains = $complainsStmt->fetchAll();
       border-bottom: 1px solid lightgrey;
       flex-direction: column;
       position: relative;
+      padding-bottom: 10px;
     }
 
     .user-name span {
-      font-size: 16px;
+      font-size: 13px;
       color: var(--font-main-color);
       font-family: Time;
     }
 
     .user-name .name {
-      font-size: 22px;
+      font-size: 18px;
       color: black;
       font-family: Poppin_bold;
     }
-
-
 
     .upload-image {
       position: absolute;
       right: 110px;
       top: 60px;
-      
       width: 20px;
       text-align: center;
       border-radius: 50%;
@@ -258,6 +261,7 @@ $complains = $complainsStmt->fetchAll();
       color: black;
       margin: 5px 2px;
       transition: .2s;
+      font-size: 13px;
     }
 
     .test:hover {
@@ -291,7 +295,7 @@ $complains = $complainsStmt->fetchAll();
     /* Main content containers styles */
 
     .child-format {
-      width: 630px;
+      width: 800px;
       background: white;
       height: 600px;
       border-radius: 20px;
@@ -314,7 +318,7 @@ $complains = $complainsStmt->fetchAll();
     /* CANDIDATE CONTAINER STYLE*/
 
     .container-title {
-      width: 630px;
+      width: 730px;
       height: 30px;
       display: flex;
       align-items: center;
@@ -324,7 +328,7 @@ $complains = $complainsStmt->fetchAll();
     }
 
     .container-title .title {
-      font-size: 20px;
+      font-size: 17px;
       font-family: Roboto;
       font-weight: bold;
       color: #6A696B;
@@ -339,6 +343,7 @@ $complains = $complainsStmt->fetchAll();
       border: 1px solid grey;
       border-radius: 6px;
       outline: none;
+      display: none;
     }
 
     .search-wrapper input:hover {
@@ -347,11 +352,11 @@ $complains = $complainsStmt->fetchAll();
 
     .search-wrapper label {
       font-size: 20px;
-
+      display: none;
     }
 
     .candidates-container {
-      width: 610px;
+      width: 710px;
       max-height: 400px;
       padding: 20px;
       border-radius: 12px;
@@ -410,8 +415,8 @@ $complains = $complainsStmt->fetchAll();
     }
 
     .candidate {
-      
-      width: 500px;
+
+      width: 670px;
       padding: 12px;
       display: flex;
       align-items: center;
@@ -423,11 +428,11 @@ $complains = $complainsStmt->fetchAll();
 
     .candidate:hover {
       border-left: 5px solid #E6CAF1ff;
-     
+
     }
-    
+
     .candidate:nth-child(odd) {
-         background: #fafafa;
+      background: #fafafa;
     }
 
     .candidate-icon {
@@ -483,7 +488,7 @@ $complains = $complainsStmt->fetchAll();
     /* CANDIDATES SKELETON CONTAINER STYLES*/
 
     .candidate-skeleton {
-      width: 500px;
+      width: 650px;
       height: 75px;
       padding: 12px;
       display: flex;
@@ -557,12 +562,12 @@ $complains = $complainsStmt->fetchAll();
     @keyframes reflect {
       0% {
         opacity: 1;
-        right: 0;
+
       }
 
       100% {
-        opacity: 0.3;
-        right: 100%;
+        opacity: 0.1;
+
       }
     }
 
@@ -676,7 +681,7 @@ $complains = $complainsStmt->fetchAll();
     }
 
     .blogpost-container {
-      width: 610px;
+      width: 650px;
       height: 400px;
       padding: 20px;
       border-radius: 12px;
@@ -705,7 +710,7 @@ $complains = $complainsStmt->fetchAll();
 
 
     .post {
-      width: 580px;
+      width: 600px;
       height: 60px;
 
       margin-bottom: 10px;
@@ -775,7 +780,7 @@ $complains = $complainsStmt->fetchAll();
     }
 
     .upload-btn {
-      width: 180px;
+      width: 90%;
       padding: 5px 10px;
       border-radius: 12px;
       border: 1px dashed grey;
@@ -799,7 +804,7 @@ $complains = $complainsStmt->fetchAll();
     }
 
     #ttl {
-      width: 400px;
+      width: 90%;
       padding: 10px;
       font-size: 14px;
       border-radius: 10px;
@@ -811,8 +816,8 @@ $complains = $complainsStmt->fetchAll();
     }
 
     #body {
-      width: 400px;
-   
+      width: 90%;
+
       padding: 10px;
       font-size: 18px;
       border-radius: 10px;
@@ -832,7 +837,7 @@ $complains = $complainsStmt->fetchAll();
 
     #publish {
       margin-top: 10px;
-      width: 200px;
+      width: 90%;
       padding: 5px;
       font-size: 13px;
       border-radius: 10px;
@@ -905,9 +910,9 @@ $complains = $complainsStmt->fetchAll();
 
 
     .candidate-information {
-      width: 580px;
-      height: 350px;
-
+      width: 650px;
+      height: 380px;
+      padding: 20px;
       border-radius: 12px;
       background: #FBF7FDff;
       border: 1px solid #f1f1f1;
@@ -923,18 +928,19 @@ $complains = $complainsStmt->fetchAll();
     }
 
     .close-container {
-      width: 540px;
+      width: 630px;
       height: 20px;
-      padding: 5px 20px;
+      padding: 1px 20px;
       border-bottom: 1px solid lightgrey;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding-bottom: 15px;
     }
 
     .user-detail {
       font-family: Roboto;
-      font-size: 16px;
+      font-size: 14px;
 
     }
 
@@ -949,8 +955,8 @@ $complains = $complainsStmt->fetchAll();
 
     .candidate-profile-details {
 
-      width: 540px;
-      height: 80px;
+      width: 620px;
+      height: 100px;
       padding: 5px 20px;
       border-bottom: 1px solid lightgray;
 
@@ -1038,33 +1044,34 @@ $complains = $complainsStmt->fetchAll();
       color: green;
       border-radius: 5px;
     }
-    
-    .contact-info, .background {
+
+    .contact-info,
+    .background {
       margin-left: 20px;
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     /* Financial status style */
-    
-    
+
+
     #insights {
-      width: 610px;
+      width: 800px;
       height: 450px;
       padding: 20px;
       border-radius: 12px;
       border: 1px solid #f1f1f1;
       overflow-y: scroll;
     }
-    
+
     .title-4 {
       margin-left: 15px;
     }
-    
+
     .earning-dashboard {
-      width: 550px;
+      width: 640px;
       height: 150px;
       padding: 20px;
       background: blue;
@@ -1072,70 +1079,72 @@ $complains = $complainsStmt->fetchAll();
       margin-bottom: 20px;
       margin-left: 11px;
     }
-    
+
     .report-dashboard {
-      width: 550px;
+      width: 640px;
       height: 100px;
       padding: 20px;
+      font-size: 12;
       background: blue;
       border-radius: 15px;
       margin-left: 11px;
     }
-    
-    
+
+
     .dash-title-1 {
       color: white;
-      font-size: 22px;
+      font-size: 18px;
       font-weight: bold;
       margin-bottom: 10px;
     }
-    
+
     .earning-wrappers {
       height: 80px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    
-    .wrapper-title, .report-message {
-      font-size: 18px;
+
+    .wrapper-title,
+    .report-message {
+      font-size: 15px;
       color: white;
     }
-    
+
     .amount {
-      font-size: 30px;
+      font-size: 20px;
       color: white;
     }
-    
-    
-    
+
+
+
     /* Complain box styles */
-    
+
     #complain {
-      width: 610px;
+      width: 810px;
       height: 450px;
       padding: 20px;
       border-radius: 12px;
       border: 1px solid #f1f1f1;
-      
+
     }
-    
+
     .not {
       border-bottom: 1px solid grey;
-      width: 590px;
+      width: 640px;
     }
-    
+
     .complain-wrapper {
-      height: 350px;
+      height: 640px;
       width: 580px;
       overflow-y: scroll;
     }
-    
-    
+
+
     .complain-wrapper::-webkit-scrollbar {
       width: 4px;
     }
-    
+
     .complain-wrapper::-webkit-scrollbar-track {
       background-color: transparent;
       border-radius: 10px;
@@ -1146,79 +1155,79 @@ $complains = $complainsStmt->fetchAll();
       border-radius: 10px;
 
     }
-    
-    
+
+
     .message {
       width: 500px;
       padding-left: 12px;
       border-left: 2px solid #fafafa;
       margin-bottom: 10px;
       display: flex;
-      align-items: center ;
+      align-items: center;
       font-weight: bold;
-      
+
     }
-    
+
     .message-receive {
       color: black;
       cursor: pointer;
     }
-    
-    
+
+
     .message:hover {
       border-left: 2px solid #9010BF;
     }
-    
+
     .complain-icon {
       width: 50px;
       height: 50px;
       object-fit: cover;
     }
-    
+
     .image-wrap {
       width: 60px;
       height: 60px;
       background: #fafafa;
       border-radius: 12px;
       display: flex;
-      align-items: center ;
-      justify-content: center ;
+      align-items: center;
+      justify-content: center;
       margin-right: 15px;
     }
-    
-    
+
+
     /* Settings stylea */
-    
-    
-    
-    
+
+
+
+
     #settings {
-      width: 610px;
+      width: 800px;
       height: 450px;
       padding: 20px;
       border-radius: 12px;
       border: 1px solid #f1f1f1;
-      overflow-y: scroll;
+      overflow-y: hidden;
     }
-    
-    
+
+
     .password-wrapper {
-      height: 300px;
+      height: 720px;
       width: 580px;
       display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
+      align-items: center;
+      justify-content: center;
       margin-top: 20px;
-      
-      
+
+
     }
-    
+
     label {
       font-size: 15px;
-    
-      
+
+
     }
-    
+
     input {
       border: none;
       padding: 10px;
@@ -1229,18 +1238,18 @@ $complains = $complainsStmt->fetchAll();
       margin-bottom: 5px;
       outline: none;
       background: white;
-      width: 320px;
+      width: 420px;
     }
-    
+
     .input-group {
       display: flex;
-      align-items: flex-start ;
+      align-items: flex-start;
       flex-direction: column;
-      justify-content: flex-start ;
+      justify-content: flex-start;
       position: relative;
       margin-bottom: 15px;
     }
-    
+
     .show {
       width: 22px;
       position: absolute;
@@ -1250,15 +1259,16 @@ $complains = $complainsStmt->fetchAll();
       cursor: pointer;
       border-radius: 10px;
     }
+
     input:hover {
       border-bottom: 2px solid #9010BF;
     }
-    
+
     .error {
       color: red;
       font-size: 14px;
     }
-    
+
     .forgot-password {
       height: 200px;
       width: 200px;
@@ -1272,8 +1282,8 @@ $complains = $complainsStmt->fetchAll();
       background: lightgoldenrodyellow;
       color: black;
     }
-    
-    
+
+
     .password-changed {
       height: 200px;
       width: 200px;
@@ -1287,14 +1297,15 @@ $complains = $complainsStmt->fetchAll();
       background: limegreen;
       color: white;
     }
-    
+
     .forgot-password-active {
       display: none;
     }
-    
+
     .success-icon {
       width: 60px;
     }
+
     #change-btn {
       width: 340px;
       padding: 10px;
@@ -1306,145 +1317,148 @@ $complains = $complainsStmt->fetchAll();
       border-radius: 12px;
       border: none;
     }
-      #change-btn:hover {
-        box-shadow: 1px 1px 5px grey;
-      } 
-      
-      .link {
-        color: blue;
-        font-weight: bold;
-      }
-  
-   
-   .candidate-icon {
-       object-fit: cover;
-   }
-   
-   .app-list
-   .view-icon {
-       width: 80px;
-       height: 80px;
-       object-fit: cover;
-   }
-   
-   .app-list {
-       display: block;
-       
-   }
-   
-   .head {
-       font-size: 13px;
-   }
-   
-   #body {
-     min-height: 40px;
-     font-size: 14px;
-     max-height: 150px;
-   }
-   
-   #body:hover, #ttl:hover {
-       border-color: #9010bf;;
-       box-shadow: 1px 1px 5px lightgray;
-   }
-   
-   
-   .post-error {
-       color: red;
-       margin-top: -5px;
-       margin-bottom: 10px;
-       font-size: 13px;
-   }
-   
-   .created  {
-       background: rgb(230, 244, 234);
-       font-size: 14px;
-       font-family: Poppin;
-       color: green;
-       border: 1px solid green;
-       border-radius: 8px;
-       padding: 5px;
-       text-align: center;
-       display: none;
-       
-   }
-   
-   /* Adjusting containers style */
-    .list {
-        height: 400px;
+
+    #change-btn:hover {
+      box-shadow: 1px 1px 5px grey;
     }
-    
-      .no-content {
-       height: 400px;
-       width: 600px;
-       background: white;
-       display: flex;
-       align-items: center ;
-       justify-content: center ;
-       flex-direction: column;
-     }
-     
-     .man {
-       width: 150px;
-       height: 150px;
-       
-     }
-     
-     .no {
-       font-size: 20px;
-       font-family: Poppin_bold;
-       color: black;
-       
-     }
-     
-     .tip {
-         font-size: 10px;
-         font-family: Time;
-         width: 400px;
-         margin-bottom: 15px;
-     }
-     
-     .tip a {
-         color: blue;
-     }
-     
-      .password-changed {
-          display: none;
-      }
-      
-      .message-detail {
-          display: flex;
-          flex-direction: column;
-      }
-      
-      .opened {
-          color: #6A696B;
-          font-family: Roboto;
-      }
-      
-      .report-dashboard, .earning-dashboard {
-          font-size: 12px;
-          width: 500px;
-      }
-      
-      .report-message {
-          font-size: 12px;
-      }
-      
-      #insights {
-          overflow: hidden;
-      }
-      
-      .title-4 {
-          font-size: 14px;
-      }
-      
-      .wrapper-title {
-          font-size: 14px;
-      }
-      
-      .user-profile {
-          height: 150px;
-      }
+
+    .link {
+      color: blue;
+      font-weight: bold;
+    }
+
+
+    .candidate-icon {
+      object-fit: cover;
+    }
+
+    .app-list .view-icon {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+    }
+
+    .app-list {
+      display: block;
+
+    }
+
+    .head {
+      font-size: 13px;
+    }
+
+    #body {
+      min-height: 40px;
+      font-size: 14px;
+      max-height: 150px;
+    }
+
+    #body:hover,
+    #ttl:hover {
+      border-color: #9010bf;
+      ;
+      box-shadow: 1px 1px 5px lightgray;
+    }
+
+
+    .post-error {
+      color: red;
+      margin-top: -5px;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+
+    .created {
+      background: rgb(230, 244, 234);
+      font-size: 14px;
+      font-family: Poppin;
+      color: green;
+      border: 1px solid green;
+      border-radius: 8px;
+      padding: 5px;
+      text-align: center;
+      display: none;
+
+    }
+
+    /* Adjusting containers style */
+    .list {
+      height: 400px;
+    }
+
+    .no-content {
+      height: 400px;
+      width: 600px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .man {
+      width: 150px;
+      height: 150px;
+
+    }
+
+    .no {
+      font-size: 20px;
+      font-family: Poppin_bold;
+      color: black;
+
+    }
+
+    .tip {
+      font-size: 10px;
+      font-family: Time;
+      width: 400px;
+      margin-bottom: 15px;
+    }
+
+    .tip a {
+      color: blue;
+    }
+
+    .password-changed {
+      display: none;
+    }
+
+    .message-detail {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .opened {
+      color: #6A696B;
+      font-family: Roboto;
+    }
+
+    .report-dashboard,
+    .earning-dashboard {
+      font-size: 12px;
+      width: 500px;
+    }
+
+    .report-message {
+      font-size: 12px;
+    }
+
+    #insights {
+      overflow: hidden;
+    }
+
+    .title-4 {
+      font-size: 14px;
+    }
+
+    .wrapper-title {
+      font-size: 14px;
+    }
+
+    .user-profile {
+      height: 150px;
+    }
   </style>
 </head>
 
@@ -1461,16 +1475,16 @@ $complains = $complainsStmt->fetchAll();
     <div class="user-profile">
       <div id="image-wrapper">
         <img src="../public/uploads/<?php echo $admin["profile_display"] ??
-          "user.png"; ?>" alt="User image here" class="user-image " id="profile-peview">
+                                      "user.png"; ?>" alt="User image here" class="user-image " id="profile-peview">
 
         <div class="upload-image" id="upload-image">
-             
-        <form id="form">
-          <input type="file" name="image" id="profile-change" hidden accept="image/" >
-          <button id="profile-btn" hidden type="submit">
-          </button>
-        </form>
-       
+
+          <form id="form">
+            <input type="file" name="image" id="profile-change" hidden accept="image/">
+            <button id="profile-btn" hidden type="submit">
+            </button>
+          </form>
+
         </div>
 
       </div>
@@ -1481,7 +1495,7 @@ $complains = $complainsStmt->fetchAll();
         </span>
       </div>
     </div>
-    
+
     <div class="menu-wrapper">
       <div class="list-wrapper">
         <div class="test active-menu" id="admission-list-btn">
@@ -1522,6 +1536,9 @@ $complains = $complainsStmt->fetchAll();
     </div>
   </div>
 
+
+
+
   <div id="main-content">
     <div id="contents">
 
@@ -1540,70 +1557,70 @@ $complains = $complainsStmt->fetchAll();
 
 
         <div class="candidate-information adlist approved-list">
-           <div class="close-container">
-             <div class="user-detail">User Details</div>
-             <a class="close-btn pending-list">Close</a>
-           </div>
-          
-           <div class="candidate-profile-details">
-          
-             <div class="candidate-detail">
-               <img src="../public/images/_03aaa487-5059-4de2-9c66-1109cafe5d95.jpeg" alt="" class="img capture">
-          
-               <div class="names-list">
-                 <div class="label">Full name:</div>
-                 <div class="name font">Sumayya Garba Diggie</div>
-                 <div class="label">Admission number:</div>
-                 <div class="admission font">UNT/21/0022</div>
-                 <div class="label">Email address:</div>
-                 <div class="email-address font">sumayya@google.com</div>
-               </div>
-             </div>
-           </div>
-          
-           <div class="candidate-info">
-             <div class="personal-info">
-               <div class="head">
-                 Personal Information
-               </div>
-               <div class="label-1">Phone number:</div>
-               <div class="phone-number font-1">08167979956</div>
-               <div class="label-1">Date of Birth: </div>
-               <div class="dob font-1">05-01-2001</div>
-               <div class="label-1">Account status:</div>
-               <div class="account-status font-1">Verified</div>
+          <div class="close-container">
+            <div class="user-detail">User Details</div>
+            <a class="close-btn pending-list">Close</a>
+          </div>
+
+          <div class="candidate-profile-details">
+
+            <div class="candidate-detail">
+              <img src="../public/images/_03aaa487-5059-4de2-9c66-1109cafe5d95.jpeg" alt="" class="img capture">
+
+              <div class="names-list">
+                <div class="label">Full name:</div>
+                <div class="name font">Sumayya Garba Diggie</div>
+                <div class="label">Admission number:</div>
+                <div class="admission font">UNT/21/0022</div>
+                <div class="label">Email address:</div>
+                <div class="email-address font">sumayya@google.com</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="candidate-info">
+            <div class="personal-info">
+              <div class="head">
+                Personal Information
+              </div>
+              <div class="label-1">Phone number:</div>
+              <div class="phone-number font-1">08167979956</div>
+              <div class="label-1">Date of Birth: </div>
+              <div class="dob font-1">05-01-2001</div>
+              <div class="label-1">Account status:</div>
+              <div class="account-status font-1">Verified</div>
               <!--  <div class="label-1">Scho status:</div>
               <div class="admission-status font-1">Approved</div> -->
-             </div>
-             <div class="contact-info">
-               <div class="head">
-                 Contact Information
-               </div>
-               <div class="label-1">Home address:</div>
-               <div class="home-address font-1">Tudun Wada area</div>
-               <div class="label-1">Local government: </div>
-               <div class="local-g font-1">Zuru</div>
-               <div class="label-1">State of origin: </div>
-               <div class="state-origin font-1">Kebbi</div>
-               <div class="label-1">Nationality: </div>
-               <div class="nationality font-1">Nigeria</div>
-          
-          
-             </div>
-             <div class="background">
-               <div class="head">
-                 Educational Background
-               </div>
-               <div class="label-1">Previous school:</div>
-               <div class="previous-school font-1">Andi gomo model primary school</div>
-               <div class="label-1">Year of passing </div>
-               <div class="year-of-passing font-1">2015</div>
-               <div class="label-1">Admission type:</div>
-               <div class="admission-type font-1">Transfer</div>
-               <div class="label-1">Admission class: </div>
-               <div class="admission-class font-1">JSS 3</div>
-             </div>
-           </div>
+            </div>
+            <div class="contact-info">
+              <div class="head">
+                Contact Information
+              </div>
+              <div class="label-1">Home address:</div>
+              <div class="home-address font-1">Tudun Wada area</div>
+              <div class="label-1">Local government: </div>
+              <div class="local-g font-1">Zuru</div>
+              <div class="label-1">State of origin: </div>
+              <div class="state-origin font-1">Kebbi</div>
+              <div class="label-1">Nationality: </div>
+              <div class="nationality font-1">Nigeria</div>
+
+
+            </div>
+            <div class="background">
+              <div class="head">
+                Educational Background
+              </div>
+              <div class="label-1">Previous school:</div>
+              <div class="previous-school font-1">Andi gomo model primary school</div>
+              <div class="label-1">Year of passing </div>
+              <div class="year-of-passing font-1">2015</div>
+              <div class="label-1">Admission type:</div>
+              <div class="admission-type font-1">Transfer</div>
+              <div class="label-1">Admission class: </div>
+              <div class="admission-class font-1">JSS 3</div>
+            </div>
+          </div>
         </div>
 
 
@@ -1619,11 +1636,11 @@ $complains = $complainsStmt->fetchAll();
 
 
           </div>
-          
+
           <!-- Candidates list before approval -->
-          <div class="list hide-list list-before-approval-before pending"  >
-           
-           
+          <div class="list hide-list list-before-approval-before pending">
+
+
           </div>
 
           <!-- Skeleton loader -->
@@ -1643,7 +1660,7 @@ $complains = $complainsStmt->fetchAll();
               <img src="../public/icons/next (1).png" alt="" class="icons-1">
             </a>
           </div>
-          <a href="#refresh" class="refresh first-refresh-btn pending" >
+          <a href="#refresh" class="refresh first-refresh-btn pending">
             <div>Refresh</div>
             <img src="../public/icons/refresh.png" alt="" class="icons-1">
           </a>
@@ -1673,7 +1690,7 @@ $complains = $complainsStmt->fetchAll();
             </div>
 
             <div class="candidate-profile-details">
-              
+
               <div class="candidate-detail">
                 <img src="../public/images/_03aaa487-5059-4de2-9c66-1109cafe5d95.jpeg" alt="" class="img capture">
 
@@ -1718,7 +1735,7 @@ $complains = $complainsStmt->fetchAll();
 
               </div>
               <div class="background">
-                 <div class="head">
+                <div class="head">
                   Educational Background
                 </div>
                 <div class="label-1">Previous school:</div>
@@ -1731,8 +1748,8 @@ $complains = $complainsStmt->fetchAll();
                 <div class="admission-class font-1">JSS 3</div>
               </div>
             </div>
-            
-            
+
+
           </div>
 
           <div class="refresh-loader" id="refresh-2">
@@ -1745,7 +1762,7 @@ $complains = $complainsStmt->fetchAll();
           </div>
 
           <div class="list hide-list app-list">
-          
+
           </div>
 
 
@@ -1795,43 +1812,43 @@ $complains = $complainsStmt->fetchAll();
               </span>
             </div>
           </div>
-          
-           <div id="post-content">
-           
-           </div>
-          
-          
+
+          <div id="post-content">
+
+          </div>
+
+
         </div>
         <div class="blogpost-container create-wrapper">
           <form id="post">
             <label for="ttl">Title:</label>
             <input type="text" name="title" id="ttl">
             <div class="post-error">
-                
+
             </div>
             <label for="body">Content</label>
             <textarea name="body" id="body"></textarea>
-             <div class="post-error">
-                
+            <div class="post-error">
+
             </div>
             <div class="tip">
-                Remember, you have the freedom to use valid HTML and CSS to style your content creatively. Explore different CSS properties and selectors to achieve the desired look and feel without limitations <a href="#">Learn more.</a>
+              Remember, you have the freedom to use valid HTML and CSS to style your content creatively. Explore different CSS properties and selectors to achieve the desired look and feel without limitations <a href="#">Learn more.</a>
             </div>
             <label for="image"></label>
-            <a class="upload-btn" id="profile-btn">
+            <a class="upload-btn blog-image" id="post-upload-btn">
               Feature image
             </a>
             <div id="error-message"></div>
             <img class="profile-preview" id="profile-preview">
             <input type="file" hidden name="feature_image" id="post-upload-image" accept="image/*">
-             <div class="post-error">
-                
+            <div class="post-error">
+
             </div>
             <input type="submit" value="Publish" name="publish" id="publish">
             <div class="created">
-                Success! Your post has been created and is now live
+              Success! Your post has been created and is now live
             </div>
-                      </form>
+          </form>
         </div>
 
 
@@ -1860,153 +1877,141 @@ $complains = $complainsStmt->fetchAll();
       <div class="child-format" id="insights">
         <div class="container-title">
           <div class="title title-4">
-           Stats & Financial status 
+            Stats & Financial status
           </div>
         </div>
-        
-        <div class="earning-dashboard">
+
+        <div class="earning-dashboard" style="width: 640px;">
           <div class="dash-title-1">
-            School earnings 
+            School earnings
           </div>
           <div class="earning-wrappers">
             <div class="paid">
               <div class="wrapper-title">
-                Paid Balance 
+                Paid Balance
               </div>
               <div class="total-amount amount">
                 N102,000,00
               </div>
             </div>
-          
+
           </div>
         </div>
-        <div class="report-dashboard">
+        <div class="report-dashboard" style="width: 640px;">
           <div class="dash-title-1">
-            Reports 
+            Reports
           </div>
-          
+
           <div class="report-message">
             Balance is updated once a candidate completes their payment. If they haven't paid their admission fees, the balance will remain unpaid.
           </div>
         </div>
       </div>
-      
+
       <!-- Complaint box -->
       <div class="child-format" id="complain">
         <div class="container-title">
           <div class="title not title-4">
-           Notifications 
+            Notifications
           </div>
         </div>
-        
+
         <div class="complain-wrapper">
-            
+
           <?php foreach ($complains as $complain) { ?>
-          
-          
-         <?php if (!$complain["isOpened"]) { ?>
-          <a href="../views/complain.php?id=<?php echo $complain[
-            "id"
-          ]; ?>"class="message message-receive">
-            <div class="image-wrap">
-               <img src="../public/icons/inbox.png" alt="" class="complain-icon">
-            </div>
-            <div class="message-detail">
-              <div class="font">ID: UNT/21/<?php echo $complain[
-                "admission_no"
-              ]; ?>
-              </div>
-              <div class="label">Subject: <?php echo $complain[
-                "nature"
-              ]; ?></div>
-              <div class="label">body: <?php echo $complain["body"]; ?>...</div>
-            </div>
-           
-          </a>
-         <?php } else { ?>
-            <a href="../views/complain.php?id=<?php echo $complain[
-              "id"
-            ]; ?>" class="message opened">
-            <div class="image-wrap">
-              <img src="../public/icons/received.png" alt="" class="complain-icon">
-            </div>
-            <div class="message-detail">
-              <div class="font">ID: UNT/21/<?php echo $complain[
-                "admission_no"
-              ]; ?></div>
-              <div class="label">Subject: <?php echo $complain[
-                "nature"
-              ]; ?></div>
-              <div class="label">body: <?php echo $complain["body"]; ?>...</div>
-            </div>
-          
-          </a>
-       
-         <?php } ?>
-         <?php } ?>
+
+
+            <?php if (!$complain["isOpened"]) { ?>
+              <a href="../views/complain.php?id=<?php echo $complain["id"]; ?>" class="message message-receive">
+                <div class="image-wrap">
+                  <img src="../public/icons/inbox.png" alt="" class="complain-icon">
+                </div>
+                <div class="message-detail">
+                  <div class="font">ID: UNT/21/<?php echo $complain["admission_no"]; ?>
+                  </div>
+                  <div class="label">Subject: <?php echo $complain["nature"]; ?></div>
+                  <div class="label">body: <?php echo $complain["body"]; ?>...</div>
+                </div>
+
+              </a>
+            <?php } else { ?>
+              <a href="../views/complain.php?id=<?php echo $complain["id"]; ?>" class="message opened">
+                <div class="image-wrap">
+                  <img src="../public/icons/received.png" alt="" class="complain-icon">
+                </div>
+                <div class="message-detail">
+                  <div class="font">ID: UNT/21/<?php echo $complain["admission_no"]; ?></div>
+                  <div class="label">Subject: <?php echo $complain["nature"]; ?></div>
+                  <div class="label">body: <?php echo $complain["body"]; ?>...</div>
+                </div>
+
+              </a>
+
+            <?php } ?>
+          <?php } ?>
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="child-format" id="settings">
-       <div class="title-container">
-         <div class="title">
-           Settings 
-         </div>
-       </div>
-      
-         <div class="password-wrapper">
-           <form id="form-2">
-       
-             <div class="input-group">
-               <label for="current-password">
-                 Current password
-               </label>
-               <input type="password" name="current" id="current-password">
-               <img src="../public/icons/eye (1).png" alt="" class="show current-password">
-               <div class="error">
-       
-               </div>
-             </div>
-             <div class="input-group">
-               <label for="new-password">New password</label>
-               <input type="password" name="newpassword" id="new-password">
-               <img src="../public/icons/eye (1).png" alt="" class="show new-password">
-               <div class="error ">
-       
-               </div>
-             </div>
-             <div class="input-group">
-               <label for="retype">Retype password</label>
-               <input type="password" name="retype" id="retype">
-               <img src="../public/icons/eye (1).png" alt="" class="show retype">
-               <div class="error">
-       
-               </div>
-             </div>
-             <input type="submit" id="change-btn" value="Change password">
-           </form>
-       
-           <div class="forgot-password-wrapper">
-             <div id="warn" class="forgot-password forgot-password-active">
-               Oops, that password is incorrect. Click <a href="#" class="link">Forgot password</a> to reset and try again
-             </div>
-       
-             <div class="password-changed">
-               <img src="../public/icons/security (1).png" alt="" class="success-icon">
-               <div>
-                 You have successfully changed your password.
-               </div>
-             </div>
-           </div>
-         </div>
-       
-      
+        <div class="title-container" style="width: 640px;">
+          <div class="title">
+            Settings
+          </div>
+        </div>
+
+        <div class="password-wrapper">
+          <form id="form-2">
+
+            <div class="input-group">
+              <label for="current-password">
+                Current password
+              </label>
+              <input type="password" name="current" id="current-password">
+              <img src="../public/icons/eye (1).png" alt="" class="show current-password">
+              <div class="error">
+
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="new-password">New password</label>
+              <input type="password" name="newpassword" id="new-password">
+              <img src="../public/icons/eye (1).png" alt="" class="show new-password">
+              <div class="error ">
+
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="retype">Retype password</label>
+              <input type="password" name="retype" id="retype">
+              <img src="../public/icons/eye (1).png" alt="" class="show retype">
+              <div class="error">
+
+              </div>
+            </div>
+            <input type="submit" id="change-btn" value="Change password">
+          </form>
+
+          <div class="forgot-password-wrapper">
+            <div id="warn" class="forgot-password forgot-password-active">
+              Oops, that password is incorrect. Click <a href="#" class="link">Forgot password</a> to reset and try again
+            </div>
+
+            <div class="password-changed">
+              <img src="../public/icons/security (1).png" alt="" class="success-icon">
+              <div>
+                You have successfully changed your password.
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
-      
-      
-      
+
+
+
     </div>
   </div>
 
@@ -2021,8 +2026,6 @@ $complains = $complainsStmt->fetchAll();
 
   <!-- Script container -->
   <script>
-   
-   
     var viewsBtn = document.querySelectorAll('.views-btn');
     var viewsDetail = document.querySelectorAll('.candidate-information');
     var closeBtn = document.querySelectorAll('.close-btn');
@@ -2030,66 +2033,66 @@ $complains = $complainsStmt->fetchAll();
     var hiddenList = document.querySelectorAll('.hide-list');
 
     var nextButtonWrap = document.querySelectorAll('.next-btn');
-    
-    
-   
+
+
+
 
     // Before approval 
     let adList = document.querySelector('.adlist');
-    
-   
+
+
     var pendingFname = document.querySelector(".adlist .name");
-   
+
     var pendingAdmission = document.querySelector(".adlist  .admission");
     var pendingEmail = document.querySelector(".adlist   .email-address");
     var pendingPhoneNo = document.querySelector(".adlist .phone-number");
     var pendingDOB = document.querySelector(".adlist   .dob");
     var pendingAddress = document.querySelector(".adlist   .home-address");
-    
+
     var pendingLocalG = document.querySelector(".adlist .local-g");
     var pendingState = document.querySelector(".adlist .state-origin");
     var pendingNat = document.querySelector(".adlist .nationality");
-    
+
     var pendingPrevious = document.querySelector(".adlist .previous-school");
     var pendingPassing = document.querySelector(".adlist .year-of-passing");
     var pendingClass = document.querySelector(".adlist .admission-class");
     var pendingType = document.querySelector(".adlist .admission-type");
     var pendingIcon = document.querySelector(".adlist .capture");
-    
+
     // After approval 
     let aplist = document.querySelector('.aplist');
 
-var approvedFname = document.querySelector(".aplist .name");
-var approvedAdmission = document.querySelector(".aplist  .admission");
-var approvedEmail = document.querySelector(".aplist   .email-address");
-var approvedPhoneNo = document.querySelector(".aplist .phone-number");
-var approvedDOB = document.querySelector(".aplist   .dob");
-var approvedAddress = document.querySelector(".aplist   .home-address");
+    var approvedFname = document.querySelector(".aplist .name");
+    var approvedAdmission = document.querySelector(".aplist  .admission");
+    var approvedEmail = document.querySelector(".aplist   .email-address");
+    var approvedPhoneNo = document.querySelector(".aplist .phone-number");
+    var approvedDOB = document.querySelector(".aplist   .dob");
+    var approvedAddress = document.querySelector(".aplist   .home-address");
 
-var approvedLocalG = document.querySelector(".aplist .local-g");
-var approvedState = document.querySelector(".aplist .state-origin");
-var approvedNat = document.querySelector(".aplist .nationality");
+    var approvedLocalG = document.querySelector(".aplist .local-g");
+    var approvedState = document.querySelector(".aplist .state-origin");
+    var approvedNat = document.querySelector(".aplist .nationality");
 
-var approvedPrevious = document.querySelector(".aplist .previous-school");
-var approvedPassing = document.querySelector(".aplist .year-of-passing");
-var approvedClass = document.querySelector(".aplist .admission-class")
-var approvedType = document.querySelector(".aplist .admission-type")
-var approvedIcon = document.querySelector(".aplist .capture");
+    var approvedPrevious = document.querySelector(".aplist .previous-school");
+    var approvedPassing = document.querySelector(".aplist .year-of-passing");
+    var approvedClass = document.querySelector(".aplist .admission-class")
+    var approvedType = document.querySelector(".aplist .admission-type")
+    var approvedIcon = document.querySelector(".aplist .capture");
 
- 
 
-    
+
+
     // Get candidate data
-    
-         
+
+
     //    viewsDetail[0].style.display = 'block'
-      
+
 
 
     closeBtn.forEach(btn => {
       btn.addEventListener('click', () => {
 
-        
+
 
         if (btn.classList.contains('pending-list')) {
           viewsDetail[0].style.display = 'none'
@@ -2100,11 +2103,11 @@ var approvedIcon = document.querySelector(".aplist .capture");
           hiddenList[0].style.display = 'block'
           nextButtonWrap[0].style.display = 'flex';
         }
-        
-        
+
+
         if (btn.classList.contains('approved-list')) {
-          
-         
+
+
           viewsDetail[1].style.display = 'none'
           searchInput[1].readOnly = false;
           searchInput[1].placeholder = "e.g 'Sumayya Garba'"
@@ -2113,530 +2116,531 @@ var approvedIcon = document.querySelector(".aplist .capture");
           hiddenList[1].style.display = 'block'
           nextButtonWrap[1].style.display = 'flex';
         }
-        
-        
-        
-        
+
+
+
+
 
       })
     })
-  
-  
-   // Pagination, viewBtn, delete and Admitted
-   
-   // For the approved sections 
-   var currentPage = 1;
-   var itemsPerPage = 4;
-   
-   const fetchPending = async (page) => {
-       try {
+
+
+    // Pagination, viewBtn, delete and Admitted
+
+    // For the approved sections 
+    var currentPage = 1;
+    var itemsPerPage = 4;
+
+    const fetchPending = async (page) => {
+      try {
         const res = await fetch(`../include/candidates.php?page=${page}&items=${itemsPerPage}`);
-        
+
         const result = await res.json();
         //alert(result)
         displayPending(result);
-       // updatePaginationButtons();
-       } catch(error) {
-           alert(error.message)
-       }
-   }
-   
-   var admissionList = document.querySelector('.list-before-approval-before');
-     var pendingFname = document.querySelector(".adlist .name");
-  function displayPending(data) {
-     
-    //  admissionList.innerHtml = ""
-      if(data.limit) {
-          var noContentDiv = document.createElement("div");
-    noContentDiv.classList.add("no-content");
-    noContentDiv.id = "no-content";
-
-    // Create image element
-    var img = document.createElement("img");
-    img.src = "../public/icons/man.png";
-    img.classList.add("man");
-    img.alt = "";
-
-    // Create div for "Oops! No Data"
-    var noDiv = document.createElement("div");
-    noDiv.classList.add("no");
-    noDiv.textContent = "Oops! No Data";
-
-    // Create div for "End of the line! Hit 'Refresh' to see recent data or return to the beginning."
-    var moreDiv = document.createElement("div");
-    moreDiv.classList.add("more");
-    moreDiv.textContent = "End of the line! Hit 'Refresh' to see if there's recent data or return to the beginning.";
-
-    // Append elements to main div
-    noContentDiv.appendChild(img);
-    noContentDiv.appendChild(noDiv);
-    noContentDiv.appendChild(moreDiv);
-
-    // Append main div to target element (replace 'targetElementId' with your target element's ID)
-    var targetElement = document.getElementById("targetElementId");
-    admissionList.appendChild(noContentDiv);
-    }  else {  
-        data.forEach(can =>
-      {
-         
-              
-         
-          
-                 // Create main container for candidate
-        const candidateContainer = document.createElement('div');
-        candidateContainer.classList.add('candidate');
-
-        // Create image element and set source
-        const profileImage = document.createElement('img');
-        profileImage.classList.add('candidate-icon');
-        profileImage.src = "../public/uploads/" + can.display_image;
-        candidateContainer.appendChild(profileImage);
-
-        // Create details container
-        const detailsContainer = document.createElement('div');
-        detailsContainer.classList.add('candidate-details');
-
-        // Create fullname element
-        const fullname = document.createElement('div');
-        fullname.classList.add('fullname');
-        fullname.textContent = can.fullname;
-        detailsContainer.appendChild(fullname);
-
-        // Create email element
-        const email = document.createElement('div');
-        email.classList.add('email');
-        email.textContent = can.email;
-        detailsContainer.appendChild(email);
-
-        // Create admission number element
-        const admissionNo = document.createElement('div');
-        admissionNo.classList.add('admission-no');
-        admissionNo.textContent = "UNT/21/" + can.admission_no;
-        detailsContainer.appendChild(admissionNo);
-
-        // Create buttons container
-        const buttonsContainer = document.createElement('div');
-        buttonsContainer.classList.add('buttons');
-
-        // Create 'View Info' button
-        const viewInfoBtn = document.createElement('a');
-        viewInfoBtn.classList.add('btn', 'views-btn', 'btn-1', 'pending-list');
-        viewInfoBtn.textContent = 'View Info';
-        viewInfoBtn.setAttribute('data-id', can.can_id);
-        buttonsContainer.appendChild(viewInfoBtn);
-
-        // Create 'Admit' button
-        const admitBtn = document.createElement('a');
-        admitBtn.classList.add('btn', 'btn-2');
-        admitBtn.textContent = 'Admit';
-        admitBtn.style.margin = "0 5px";
-        buttonsContainer.appendChild(admitBtn);
-
-        // Create 'Cancel' button
-        const cancelBtn = document.createElement('a');
-        cancelBtn.classList.add('btn', 'btn-3');
-        cancelBtn.textContent = 'Cancel';
-        buttonsContainer.appendChild(cancelBtn);
-
-        // Append buttons container to details container
-        detailsContainer.appendChild(buttonsContainer);
-
-        // Append details container to candidate container
-        candidateContainer.appendChild(detailsContainer);
-
-        admissionList.appendChild( candidateContainer);
-        
-        viewInfoBtn.addEventListener("click", async () => {
-            
-                viewsDetail[0].style.display = 'block'
-          searchInput[0].readOnly = true;
-          searchInput[0].placeholder = 'Search not allowed';
-          searchInput[0].style.border = '1px solid red';
-          hiddenList[0].style.display = 'none'
-          nextButtonWrap[0].style.display = 'none';
-         
-     
-         let id = can.can_id
-         
-        var findCandidate = new FormData();
-         findCandidate.append('id', id);
-      
-      try {
-        const res = await fetch("http://localhost:8080/include/getCan.php", {
-            method: "POST",
-            body: findCandidate
-        });
-       
-        
-        if(!res.ok) {
-          throw Error("Something wrong with the server.")
-        }
-        
-        const result = await res.json();
-        
-        if(result.data) {
-         pendingFname.textContent = result["data"]["fullname"];
-         pendingEmail.textContent = result["data"]["email"];
-         pendingAdmission.textContent = "UNT/21/" + result["data"]["admission_no"];
-         pendingPhoneNo.textContent = result["data"]["phone_no"];
-         pendingDOB.textContent = result["data"]["dob"];
-         pendingAddress.textContent = result["data"]["address"];
-         pendingState.textContent = result["data"]["state"];
-         pendingNat.textContent = result["data"]["nationality"];
-         pendingPrevious.textContent = result["data"]["previous_school"];
-         pendingPassing.textContent = result["data"]["year_of_passing"];
-         pendingLocalG.textContent = result["data"]["localG"];
-         pendingType.textContent = result["data"]["admission_type"];
-         pendingClass.textContent = result["data"]["admission_class"];
-         pendingIcon.src = "../public/uploads/" + result["data"]["display_image"];
-        }
-  
-        
-        
-      } catch(err) {
-          alert(err.message)
-       // return err.message;
+        // updatePaginationButtons();
+      } catch (error) {
+        alert(error.message)
       }
-    
-      
-        });
-        admitBtn.addEventListener("click", async () => {
+    }
+
+    var admissionList = document.querySelector('.list-before-approval-before');
+    var pendingFname = document.querySelector(".adlist .name");
+
+    function displayPending(data) {
+
+      //  admissionList.innerHtml = ""
+      if (data.limit) {
+        var noContentDiv = document.createElement("div");
+        noContentDiv.classList.add("no-content");
+        noContentDiv.id = "no-content";
+
+        // Create image element
+        var img = document.createElement("img");
+        img.src = "../public/icons/man.png";
+        img.classList.add("man");
+        img.alt = "";
+
+        // Create div for "Oops! No Data"
+        var noDiv = document.createElement("div");
+        noDiv.classList.add("no");
+        noDiv.textContent = "Oops! No Data";
+
+        // Create div for "End of the line! Hit 'Refresh' to see recent data or return to the beginning."
+        var moreDiv = document.createElement("div");
+        moreDiv.classList.add("more");
+        moreDiv.textContent = "End of the line! Hit 'Refresh' to see if there's recent data or return to the beginning.";
+
+        // Append elements to main div
+        noContentDiv.appendChild(img);
+        noContentDiv.appendChild(noDiv);
+        noContentDiv.appendChild(moreDiv);
+
+        // Append main div to target element (replace 'targetElementId' with your target element's ID)
+        var targetElement = document.getElementById("targetElementId");
+        admissionList.appendChild(noContentDiv);
+      } else {
+        data.forEach(can => {
+
+
+
+
+          // Create main container for candidate
+          const candidateContainer = document.createElement('div');
+          candidateContainer.classList.add('candidate');
+
+          // Create image element and set source
+          const profileImage = document.createElement('img');
+          profileImage.classList.add('candidate-icon');
+          profileImage.src = "../public/uploads/" + can.display_image;
+          candidateContainer.appendChild(profileImage);
+
+          // Create details container
+          const detailsContainer = document.createElement('div');
+          detailsContainer.classList.add('candidate-details');
+
+          // Create fullname element
+          const fullname = document.createElement('div');
+          fullname.classList.add('fullname');
+          fullname.textContent = can.fullname;
+          detailsContainer.appendChild(fullname);
+
+          // Create email element
+          const email = document.createElement('div');
+          email.classList.add('email');
+          email.textContent = can.email;
+          detailsContainer.appendChild(email);
+
+          // Create admission number element
+          const admissionNo = document.createElement('div');
+          admissionNo.classList.add('admission-no');
+          admissionNo.textContent = "UNT/21/" + can.admission_no;
+          detailsContainer.appendChild(admissionNo);
+
+          // Create buttons container
+          const buttonsContainer = document.createElement('div');
+          buttonsContainer.classList.add('buttons');
+
+          // Create 'View Info' button
+          const viewInfoBtn = document.createElement('a');
+          viewInfoBtn.classList.add('btn', 'views-btn', 'btn-1', 'pending-list');
+          viewInfoBtn.textContent = 'View Info';
+          viewInfoBtn.setAttribute('data-id', can.can_id);
+          buttonsContainer.appendChild(viewInfoBtn);
+
+          // Create 'Admit' button
+          const admitBtn = document.createElement('a');
+          admitBtn.classList.add('btn', 'btn-2');
+          admitBtn.textContent = 'Admit';
+          admitBtn.style.margin = "0 5px";
+          buttonsContainer.appendChild(admitBtn);
+
+          // Create 'Cancel' button
+          const cancelBtn = document.createElement('a');
+          cancelBtn.classList.add('btn', 'btn-3');
+          cancelBtn.textContent = 'Cancel';
+          buttonsContainer.appendChild(cancelBtn);
+
+          // Append buttons container to details container
+          detailsContainer.appendChild(buttonsContainer);
+
+          // Append details container to candidate container
+          candidateContainer.appendChild(detailsContainer);
+
+          admissionList.appendChild(candidateContainer);
+
+          viewInfoBtn.addEventListener("click", async () => {
+
+            viewsDetail[0].style.display = 'block'
+            searchInput[0].readOnly = true;
+            searchInput[0].placeholder = 'Search not allowed';
+            searchInput[0].style.border = '1px solid red';
+            hiddenList[0].style.display = 'none'
+            nextButtonWrap[0].style.display = 'none';
+
+
+            let id = can.can_id
+
+            var findCandidate = new FormData();
+            findCandidate.append('id', id);
+
+            try {
+              const res = await fetch("../include/getCan.php", {
+                method: "POST",
+                body: findCandidate
+              });
+
+
+              if (!res.ok) {
+                throw Error("Something wrong with the server.")
+              }
+
+              const result = await res.json();
+
+              if (result.data) {
+                pendingFname.textContent = result["data"]["fullname"];
+                pendingEmail.textContent = result["data"]["email"];
+                pendingAdmission.textContent = "UNT/21/" + result["data"]["admission_no"];
+                pendingPhoneNo.textContent = result["data"]["phone_no"];
+                pendingDOB.textContent = result["data"]["dob"];
+                pendingAddress.textContent = result["data"]["address"];
+                pendingState.textContent = result["data"]["state"];
+                pendingNat.textContent = result["data"]["nationality"];
+                pendingPrevious.textContent = result["data"]["previous_school"];
+                pendingPassing.textContent = result["data"]["year_of_passing"];
+                pendingLocalG.textContent = result["data"]["localG"];
+                pendingType.textContent = result["data"]["admission_type"];
+                pendingClass.textContent = result["data"]["admission_class"];
+                pendingIcon.src = "../public/uploads/" + result["data"]["display_image"];
+              }
+
+
+
+            } catch (err) {
+              alert(err.message)
+              // return err.message;
+            }
+
+
+          });
+          admitBtn.addEventListener("click", async () => {
             var admitCandidate = new FormData();
             admitCandidate.append("can", can.can_id);
             try {
               const res = await fetch("../include/admit_candidate.php", {
-                  method: "POST",
-                  body: admitCandidate
+                method: "POST",
+                body: admitCandidate
               });
-              
-              
+
+
               const result = await res.json();
-              
-              if(result.redirect) {
-                  admissionList.removeChild(candidateContainer);
-                 if(admissionList.children.length <= 0) {
-                    window.location = "./admin.php"
+
+              if (result.redirect) {
+                admissionList.removeChild(candidateContainer);
+                if (admissionList.children.length <= 0) {
+                  window.location = "./admin.php"
                 }
               } else {
-                  alert("Something went wrong, try again.");
+                alert("Something went wrong, try again.");
               }
-            } catch(err) {
-               console.log(err.message);
+            } catch (err) {
+              console.log(err.message);
             }
-        });
-        cancelBtn.addEventListener("click", async () => {
-           try {
-            var cancel = new FormData();
-            cancel.append("can", can.can_id);
-            var res = await fetch("../include/delete_can.php", {
+          });
+          cancelBtn.addEventListener("click", async () => {
+            try {
+              var cancel = new FormData();
+              cancel.append("can", can.can_id);
+              var res = await fetch("../include/delete_can.php", {
                 method: "POST",
                 body: cancel
-            });
-            
-            var result= await res.json();
-          
-            if(result.redirect) {
+              });
+
+              var result = await res.json();
+
+              if (result.redirect) {
                 admissionList.removeChild(candidateContainer);
-                
-                if(admissionList.children.length<= 0) {
-                    window.location = "./admin.php"
+
+                if (admissionList.children.length <= 0) {
+                  window.location = "./admin.php"
                 }
-            } else {
+              } else {
                 alert("Something went wrong!");
+              }
+
+            } catch (error) {
+              alert(error.message);
             }
-            
-           } catch (error) {
-               alert(error.message);
-           }
-        })
-      
-       });
-      
-  }}
-   
-  
-  
-   var admissionListPrevious = document.getElementById("previous");
-   var admissionListNext = document.getElementById("next");
-  
-  
-  admissionListPrevious.addEventListener("click", () => {
-      if(currentPage > 1) {
-          while(admissionList.firstElementChild) {
-           admissionList.removeChild(admissionList.firstElementChild)  ; 
-          }
-          currentPage --
-          fetchPending(currentPage);
-      }
-  })
-  
-  admissionListNext.addEventListener("click", () => {
-           while(admissionList.firstElementChild) {
-           admissionList.removeChild(admissionList.firstElementChild)  ; 
-          }
-      currentPage++
-     fetchPending(currentPage);
-  })
-  
-   fetchPending(currentPage);
-  
-   // Approved list fetch Api
-   var currentApprovedPage = 1;
-   var approvedListPerPage = 4;
-   
-   
-  async function fetchApproved(currentApprovedPage) {
-       try {
-          const res = await fetch(`../include/approved_can.php?page=${currentApprovedPage}&limit=${approvedListPerPage}`); 
-          const result = await res.json();
-        displayApproved(result);
-       } catch(error) {
-         alert(error.message);
-       }
-   }
-  
-  var approvedList = document.querySelector('.app-list')
-  
-  function displayApproved(data) {
-      if(data.limit) {
-            var noContentDiv = document.createElement("div");
-    noContentDiv.classList.add("no-content");
-    noContentDiv.id = "no-content";
+          })
 
-    // Create image element
-    var img = document.createElement("img");
-    img.src = "../public/icons/man.png";
-    img.classList.add("man");
-    img.alt = "";
-
-    // Create div for "Oops! No Data"
-    var noDiv = document.createElement("div");
-    noDiv.classList.add("no");
-    noDiv.textContent = "Oops! No Data";
-
-    // Create div for "End of the line! Hit 'Refresh' to see recent data or return to the beginning."
-    var moreDiv = document.createElement("div");
-    moreDiv.classList.add("more");
-    moreDiv.textContent = "End of the line! Hit 'Refresh' to see if threre's recent data or return to the beginning.";
-
-    // Append elements to main div
-    noContentDiv.appendChild(img);
-    noContentDiv.appendChild(noDiv);
-    noContentDiv.appendChild(moreDiv);
-
-    // Append main div to target element (replace 'targetElementId' with your target element's ID)
-    var targetElement = document.getElementById("targetElementId");
-    approvedList.appendChild(noContentDiv);
-      } else {
-          
-       data.forEach(can => {
-           
-               // Create main container for candidate
-    const candidateContainer = document.createElement('div');
-    candidateContainer.classList.add('candidate');
-
-    // Create image container and set source
-    const imageContainer = document.createElement('div');
-    const profileImage = document.createElement('img');
-    profileImage.classList.add('candidate-icon');
-    profileImage.src = "../public/uploads/" + can.display_image;
-    imageContainer.appendChild(profileImage);
-    candidateContainer.appendChild(imageContainer);
-
-    // Create details container
-    const detailsContainer = document.createElement('div');
-    detailsContainer.classList.add('candidate-details', 'details-2');
-
-    // Create column 1
-    const column1 = document.createElement('div');
-    column1.classList.add('column-1');
-
-    const fullname = document.createElement('div');
-    fullname.classList.add('fullname');
-    fullname.textContent = can.fullname;
-    column1.appendChild(fullname);
-
-    const email = document.createElement('div');
-    email.classList.add('email');
-    email.textContent = can.email;
-    column1.appendChild(email);
-
-    const admissionNo = document.createElement('div');
-    admissionNo.classList.add('admission-no');
-    admissionNo.textContent = "UNT/21/" + can.admission_no;
-    column1.appendChild(admissionNo);
-
-    detailsContainer.appendChild(column1);
-
-    // Create column 2 with buttons
-    const column2 = document.createElement('div');
-    column2.classList.add('column-2');
-
-    const buttonsContainer = document.createElement('div');
-    buttonsContainer.classList.add('buttons', 'column-2');
-
-    const viewInfoBtn = document.createElement('a');
-    viewInfoBtn.classList.add('btn', 'b', 'views-btn', 'btn-1', 'approved-list');
-    viewInfoBtn.textContent = 'View Info';
-    viewInfoBtn.setAttribute('data-id', can.can_id);
-    buttonsContainer.appendChild(viewInfoBtn);
-
-    const cancelAdmissionBtn = document.createElement('a');
-    cancelAdmissionBtn.classList.add('btn', 'b', 'btn-2');
-    cancelAdmissionBtn.textContent = 'Cancel Admission';
-    buttonsContainer.appendChild(cancelAdmissionBtn);
-
-    const deleteBtn = document.createElement('a');
-    deleteBtn.classList.add('btn', 'b', 'btn-3');
-    deleteBtn.textContent = 'Delete';
-    buttonsContainer.appendChild(deleteBtn);
-
-    column2.appendChild(buttonsContainer);
-    detailsContainer.appendChild(column2);
-    candidateContainer.appendChild(detailsContainer);
-
-    approvedList.appendChild( candidateContainer);
-    
-    viewInfoBtn.addEventListener('click', async () => {
-          viewsDetail[1].style.display = 'block'
-          searchInput[1].readOnly = true;
-          searchInput[1].placeholder = 'Search not allowed';
-          searchInput[1].style.border = '1px solid red';
-          hiddenList[1].style.display = 'none'
-          nextButtonWrap[1].style.display = 'none';
-          
-          let id = can.can_id;
-         
-        var findCandidate = new FormData();
-         findCandidate.append('id', id);
-      
-      try {
-        const res = await fetch("http://localhost:8080/include/getCan.php", {
-            method: "POST",
-            body: findCandidate
         });
-       
-        
-        if(!res.ok) {
-          throw Error("Something wrong with the server.")
-        }
-        
-        const result = await res.json();
-    
-       if(result.data) {
-     approvedFname.textContent = result["data"]["fullname"];
-     approvedEmail.textContent = result["data"]["email"];
-     approvedAdmission.textContent = "UNT/21/" + result["data"]["admission_no"];
-     approvedPhoneNo.textContent = result["data"]["phone_no"];
-     approvedDOB.textContent = result["data"]["dob"];
-     approvedAddress.textContent = result["data"]["address"];
-     approvedState.textContent = result["data"]["state"];
-     approvedNat.textContent = result["data"]["nationality"];
-     approvedPrevious.textContent = result["data"]["previous_school"];
-     approvedPassing.textContent = result["data"]["year_of_passing"];
-     approvedLocalG.textContent = result["data"]["localG"];
-     approvedType.textContent = result["data"]["admission_type"];
-     approvedClass.textContent = result["data"]["admission_class"];
-     approvedIcon.src = "../public/uploads/" + result["data"]["display_image"];
-}
 
-        
-        
-      } catch(err) {
-          alert(err.message)
-       // return err.message;
       }
-    });
-    
-    cancelAdmissionBtn.addEventListener("click", async() => {
-        try {
-            var cancel = new FormData();
-            cancel.append("can", can.can_id);
-            const res = await fetch("../include/cancel_admit.php", {
+    }
+
+
+
+    var admissionListPrevious = document.getElementById("previous");
+    var admissionListNext = document.getElementById("next");
+
+
+    admissionListPrevious.addEventListener("click", () => {
+      if (currentPage > 1) {
+        while (admissionList.firstElementChild) {
+          admissionList.removeChild(admissionList.firstElementChild);
+        }
+        currentPage--
+        fetchPending(currentPage);
+      }
+    })
+
+    admissionListNext.addEventListener("click", () => {
+      while (admissionList.firstElementChild) {
+        admissionList.removeChild(admissionList.firstElementChild);
+      }
+      currentPage++
+      fetchPending(currentPage);
+    })
+
+    fetchPending(currentPage);
+
+    // Approved list fetch Api
+    var currentApprovedPage = 1;
+    var approvedListPerPage = 4;
+
+
+    async function fetchApproved(currentApprovedPage) {
+      try {
+        const res = await fetch(`../include/approved_can.php?page=${currentApprovedPage}&limit=${approvedListPerPage}`);
+        const result = await res.json();
+        displayApproved(result);
+      } catch (error) {
+        alert(error.message);
+      }
+    }
+
+    var approvedList = document.querySelector('.app-list')
+
+    function displayApproved(data) {
+      if (data.limit) {
+        var noContentDiv = document.createElement("div");
+        noContentDiv.classList.add("no-content");
+        noContentDiv.id = "no-content";
+
+        // Create image element
+        var img = document.createElement("img");
+        img.src = "../public/icons/man.png";
+        img.classList.add("man");
+        img.alt = "";
+
+        // Create div for "Oops! No Data"
+        var noDiv = document.createElement("div");
+        noDiv.classList.add("no");
+        noDiv.textContent = "Oops! No Data";
+
+        // Create div for "End of the line! Hit 'Refresh' to see recent data or return to the beginning."
+        var moreDiv = document.createElement("div");
+        moreDiv.classList.add("more");
+        moreDiv.textContent = "End of the line! Hit 'Refresh' to see if threre's recent data or return to the beginning.";
+
+        // Append elements to main div
+        noContentDiv.appendChild(img);
+        noContentDiv.appendChild(noDiv);
+        noContentDiv.appendChild(moreDiv);
+
+        // Append main div to target element (replace 'targetElementId' with your target element's ID)
+        var targetElement = document.getElementById("targetElementId");
+        approvedList.appendChild(noContentDiv);
+      } else {
+
+        data.forEach(can => {
+
+          // Create main container for candidate
+          const candidateContainer = document.createElement('div');
+          candidateContainer.classList.add('candidate');
+
+          // Create image container and set source
+          const imageContainer = document.createElement('div');
+          const profileImage = document.createElement('img');
+          profileImage.classList.add('candidate-icon');
+          profileImage.src = "../public/uploads/" + can.display_image;
+          imageContainer.appendChild(profileImage);
+          candidateContainer.appendChild(imageContainer);
+
+          // Create details container
+          const detailsContainer = document.createElement('div');
+          detailsContainer.classList.add('candidate-details', 'details-2');
+
+          // Create column 1
+          const column1 = document.createElement('div');
+          column1.classList.add('column-1');
+
+          const fullname = document.createElement('div');
+          fullname.classList.add('fullname');
+          fullname.textContent = can.fullname;
+          column1.appendChild(fullname);
+
+          const email = document.createElement('div');
+          email.classList.add('email');
+          email.textContent = can.email;
+          column1.appendChild(email);
+
+          const admissionNo = document.createElement('div');
+          admissionNo.classList.add('admission-no');
+          admissionNo.textContent = "UNT/21/" + can.admission_no;
+          column1.appendChild(admissionNo);
+
+          detailsContainer.appendChild(column1);
+
+          // Create column 2 with buttons
+          const column2 = document.createElement('div');
+          column2.classList.add('column-2');
+
+          const buttonsContainer = document.createElement('div');
+          buttonsContainer.classList.add('buttons', 'column-2');
+
+          const viewInfoBtn = document.createElement('a');
+          viewInfoBtn.classList.add('btn', 'b', 'views-btn', 'btn-1', 'approved-list');
+          viewInfoBtn.textContent = 'View Info';
+          viewInfoBtn.setAttribute('data-id', can.can_id);
+          buttonsContainer.appendChild(viewInfoBtn);
+
+          const cancelAdmissionBtn = document.createElement('a');
+          cancelAdmissionBtn.classList.add('btn', 'b', 'btn-2');
+          cancelAdmissionBtn.textContent = 'Cancel Admission';
+          buttonsContainer.appendChild(cancelAdmissionBtn);
+
+          const deleteBtn = document.createElement('a');
+          deleteBtn.classList.add('btn', 'b', 'btn-3');
+          deleteBtn.textContent = 'Delete';
+          buttonsContainer.appendChild(deleteBtn);
+
+          column2.appendChild(buttonsContainer);
+          detailsContainer.appendChild(column2);
+          candidateContainer.appendChild(detailsContainer);
+
+          approvedList.appendChild(candidateContainer);
+
+          viewInfoBtn.addEventListener('click', async () => {
+            viewsDetail[1].style.display = 'block'
+            searchInput[1].readOnly = true;
+            searchInput[1].placeholder = 'Search not allowed';
+            searchInput[1].style.border = '1px solid red';
+            hiddenList[1].style.display = 'none'
+            nextButtonWrap[1].style.display = 'none';
+
+            let id = can.can_id;
+
+            var findCandidate = new FormData();
+            findCandidate.append('id', id);
+
+            try {
+              const res = await fetch("../include/getCan.php", {
+                method: "POST",
+                body: findCandidate
+              });
+
+
+              if (!res.ok) {
+                throw Error("Something wrong with the server.")
+              }
+
+              const result = await res.json();
+
+              if (result.data) {
+                approvedFname.textContent = result["data"]["fullname"];
+                approvedEmail.textContent = result["data"]["email"];
+                approvedAdmission.textContent = "UNT/21/" + result["data"]["admission_no"];
+                approvedPhoneNo.textContent = result["data"]["phone_no"];
+                approvedDOB.textContent = result["data"]["dob"];
+                approvedAddress.textContent = result["data"]["address"];
+                approvedState.textContent = result["data"]["state"];
+                approvedNat.textContent = result["data"]["nationality"];
+                approvedPrevious.textContent = result["data"]["previous_school"];
+                approvedPassing.textContent = result["data"]["year_of_passing"];
+                approvedLocalG.textContent = result["data"]["localG"];
+                approvedType.textContent = result["data"]["admission_type"];
+                approvedClass.textContent = result["data"]["admission_class"];
+                approvedIcon.src = "../public/uploads/" + result["data"]["display_image"];
+              }
+
+
+
+            } catch (err) {
+              alert(err.message)
+              // return err.message;
+            }
+          });
+
+          cancelAdmissionBtn.addEventListener("click", async () => {
+            try {
+              var cancel = new FormData();
+              cancel.append("can", can.can_id);
+              const res = await fetch("../include/cancel_admit.php", {
                 method: "POST",
                 body: cancel
-            });
-            
-            const result = await res.json();
-            
-            if(result.redirect) {
+              });
+
+              const result = await res.json();
+
+              if (result.redirect) {
                 approvedList.removeChild(candidateContainer);
-                if(approvedList.children.length <= 0) {
-                    window.location = "./admin.php"
+                if (approvedList.children.length <= 0) {
+                  window.location = "./admin.php"
                 }
-            } else {
+              } else {
                 alert("Something went wrong, try again.")
+              }
+            } catch (error) {
+
             }
-        } catch(error) {
-            
-        }
-    }) ;         
-    deleteBtn.addEventListener("click", async() => {
-        try {
-            var deleteCan = new FormData();
-            deleteCan.append("can", can.can_id);
-            const res = await fetch("../include/delete_can.php", {
+          });
+          deleteBtn.addEventListener("click", async () => {
+            try {
+              var deleteCan = new FormData();
+              deleteCan.append("can", can.can_id);
+              const res = await fetch("../include/delete_can.php", {
                 method: "POST",
                 body: deleteCan
-            });
-            
-            const result = await res.json();
-            
-            if(result.redirect) {
+              });
+
+              const result = await res.json();
+
+              if (result.redirect) {
                 approvedList.removeChild(candidateContainer);
-                 if(approvedList.children.length <= 0) {
-                    window.location = "./admin.php"
+                if (approvedList.children.length <= 0) {
+                  window.location = "./admin.php"
                 }
-            } else {
+              } else {
                 alert("Something went wrong, try again.")
+              }
+            } catch (error) {
+              alert(error.message)
             }
-        } catch(error) {
-            alert(error.message)
-        }
-    }) ;         
+          });
         });
-    
+
       }
-  }
-  
-  var approvedPreviousBtn = document.getElementById("app-previous");
-  var approvedNextBtn = document.getElementById("app-next");
-  approvedPreviousBtn.addEventListener('click', () => {
-      if(currentApprovedPage > 1) {
-           while(approvedList.firstElementChild) {
-        approvedList.removeChild(approvedList.firstElementChild);
     }
-          currentApprovedPage--
-          fetchApproved(currentApprovedPage);
+
+    var approvedPreviousBtn = document.getElementById("app-previous");
+    var approvedNextBtn = document.getElementById("app-next");
+    approvedPreviousBtn.addEventListener('click', () => {
+      if (currentApprovedPage > 1) {
+        while (approvedList.firstElementChild) {
+          approvedList.removeChild(approvedList.firstElementChild);
+        }
+        currentApprovedPage--
+        fetchApproved(currentApprovedPage);
       }
-  });
-  
-  approvedNextBtn.addEventListener('click', () => {
-    while(approvedList.firstElementChild) {
+    });
+
+    approvedNextBtn.addEventListener('click', () => {
+      while (approvedList.firstElementChild) {
         approvedList.removeChild(approvedList.firstElementChild);
-    }
-    currentApprovedPage++
+      }
+      currentApprovedPage++
+      fetchApproved(currentApprovedPage);
+    });
     fetchApproved(currentApprovedPage);
-  });
-  fetchApproved(currentApprovedPage);
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 
 
 
-    var postUploadBtn = document.getElementById('profile-btn');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    var postUploadBtn = document.getElementById('post-upload-btn');
     var postUploadImage = document.getElementById('post-upload-image');
     var imagePreview = document.getElementById('profile-preview');
     var imageErr = document.getElementById('error-message');
@@ -2648,10 +2652,9 @@ var approvedIcon = document.querySelector(".aplist .capture");
 
 
 
-
-
     postUploadBtn.addEventListener('click', () => {
       postUploadImage.click();
+
     });
     postUploadImage.addEventListener('change', function() {
 
@@ -2931,166 +2934,166 @@ var approvedIcon = document.querySelector(".aplist .capture");
 
       })
     })
-    
-    
-    
-     // POST  and Deleted 
+
+
+
+    // POST  and Deleted 
     var postContainer = document.getElementById("post-content");
     var postPrevious = document.getElementById("postPrevious");
     var postNext = document.getElementById("postNext");
     var currentPostPage = 1;
     var postPerPage = 5;
-    
+
     async function fetchPost(page) {
-        try {
-            const res = await fetch (`../include/get_post.php?page=${page}&limit=${postPerPage}`);
-            const result = await res.json();
-            displayPost(result);
-        } catch(err) {
-            alert(err.message);
-        }
-    }
-    
-    function displayPost(posts) {
-        if(posts.limit) {
-              var noContentDiv = document.createElement("div");
-    noContentDiv.classList.add("no-content");
-    noContentDiv.id = "no-content";
-
-    // Create image element
-    var img = document.createElement("img");
-    img.src = "../public/icons/man.png";
-    img.classList.add("man");
-    img.alt = "";
-
-    // Create div for "Oops! No Data"
-    var noDiv = document.createElement("div");
-    noDiv.classList.add("no");
-    noDiv.textContent = "Oops! No Data";
-
-    // Create div for "End of the line! Hit 'Refresh' to see recent data or return to the beginning."
-    var moreDiv = document.createElement("div");
-    moreDiv.classList.add("more");
-    moreDiv.textContent = "End of the line! Hit 'Refresh' to see if threre's recent data or return to the beginning.";
-
-    // Append elements to main div
-    noContentDiv.appendChild(img);
-    noContentDiv.appendChild(noDiv);
-    noContentDiv.appendChild(moreDiv);
-
-    // Append main div to target element (replace 'targetElementId' with your target element's ID)
-    var targetElement = document.getElementById("targetElementId");
-    postContainer.appendChild(noContentDiv); 
-        } else {
-            posts.forEach(post => {
-               const postDiv = document.createElement("div");
-  postDiv.classList.add("post");
-
-  const image = document.createElement("img");
-  image.src = "../public/uploads/" + post.feature_img;
-  image.alt = "";
-  image.classList.add("post-image");
-  postDiv.appendChild(image);
-
-  const titleDateDiv = document.createElement("div");
-  titleDateDiv.style.fontSize = "13px"
-  titleDateDiv.classList.add("title-date");
-
-  const titleDiv = document.createElement("div");
-  titleDiv.classList.add("title");
-  titleDiv.textContent = decodeHTML(post.title);
-  titleDateDiv.appendChild(titleDiv);
-
-  // Anchor tag for view
-  const viewAnchor = document.createElement("a");
-  viewAnchor.href = "../views/post.php?id=" + post.post_id; // Adjust the href according to your routing
-  viewAnchor.textContent = "View";
-  viewAnchor.style.color = "blue";
-  viewAnchor.style.fontSize = "12px";
-  titleDiv.style.fontSize = "14px";
-  titleDiv.style.width = "350px";
-  viewAnchor.style.width = "40px";
-  image.style.objectFit = "cover";
-  titleDateDiv.appendChild(viewAnchor);
-
-  const dateDiv = document.createElement("div");
-  dateDiv.classList.add("date");
-  dateDiv.textContent = post.createdAt;
-  titleDateDiv.appendChild(dateDiv);
-
-  postDiv.appendChild(titleDateDiv);
-
-  const deleteWrapDiv = document.createElement("div");
-  deleteWrapDiv.classList.add("delete-wrap");
-
-  const deleteDiv = document.createElement("div");
-  deleteDiv.classList.add("delete");
-
-  const deleteText = document.createElement("div");
-  deleteText.textContent = "Delete";
-  deleteDiv.appendChild(deleteText);
-
-  deleteText.style.fontSize = "10px"
-  const deleteImage = document.createElement("img");
-  deleteImage.src = "../public/icons/delete (1).png";
-  deleteImage.alt = "";
-  deleteImage.classList.add("icons-1");
-  deleteDiv.appendChild(deleteImage);
-
-  deleteWrapDiv.appendChild(deleteDiv);
-  postDiv.appendChild(deleteWrapDiv);
-
-  postContainer.appendChild(postDiv);
-  
-  deleteWrapDiv.addEventListener("click", async () => {
-      let deletePost = new FormData();
-      deletePost.append("post_id", post.post_id);
-      
-      const res = await fetch("../include/delete_post.php", {
-          method: "POST",
-          body: deletePost
-      });
-      
-      const result = await res.json();
-      
-      if(result.redirect) {
-          postContainer.removeChild(postDiv);
+      try {
+        const res = await fetch(`../include/get_post.php?page=${page}&limit=${postPerPage}`);
+        const result = await res.json();
+        displayPost(result);
+      } catch (err) {
+        alert(err.message);
       }
-  });
-  
-                });
-        }
     }
-    
+
+    function displayPost(posts) {
+      if (posts.limit) {
+        var noContentDiv = document.createElement("div");
+        noContentDiv.classList.add("no-content");
+        noContentDiv.id = "no-content";
+
+        // Create image element
+        var img = document.createElement("img");
+        img.src = "../public/icons/man.png";
+        img.classList.add("man");
+        img.alt = "";
+
+        // Create div for "Oops! No Data"
+        var noDiv = document.createElement("div");
+        noDiv.classList.add("no");
+        noDiv.textContent = "Oops! No Data";
+
+        // Create div for "End of the line! Hit 'Refresh' to see recent data or return to the beginning."
+        var moreDiv = document.createElement("div");
+        moreDiv.classList.add("more");
+        moreDiv.textContent = "End of the line! Hit 'Refresh' to see if threre's recent data or return to the beginning.";
+
+        // Append elements to main div
+        noContentDiv.appendChild(img);
+        noContentDiv.appendChild(noDiv);
+        noContentDiv.appendChild(moreDiv);
+
+        // Append main div to target element (replace 'targetElementId' with your target element's ID)
+        var targetElement = document.getElementById("targetElementId");
+        postContainer.appendChild(noContentDiv);
+      } else {
+        posts.forEach(post => {
+          const postDiv = document.createElement("div");
+          postDiv.classList.add("post");
+
+          const image = document.createElement("img");
+          image.src = "../public/uploads/" + post.feature_img;
+          image.alt = "";
+          image.classList.add("post-image");
+          postDiv.appendChild(image);
+
+          const titleDateDiv = document.createElement("div");
+          titleDateDiv.style.fontSize = "13px"
+          titleDateDiv.classList.add("title-date");
+
+          const titleDiv = document.createElement("div");
+          titleDiv.classList.add("title");
+          titleDiv.textContent = decodeHTML(post.title);
+          titleDateDiv.appendChild(titleDiv);
+
+          // Anchor tag for view
+          const viewAnchor = document.createElement("a");
+          viewAnchor.href = "../views/post.php?id=" + post.post_id; // Adjust the href according to your routing
+          viewAnchor.textContent = "View";
+          viewAnchor.style.color = "blue";
+          viewAnchor.style.fontSize = "12px";
+          titleDiv.style.fontSize = "14px";
+          titleDiv.style.width = "350px";
+          viewAnchor.style.width = "40px";
+          image.style.objectFit = "cover";
+          titleDateDiv.appendChild(viewAnchor);
+
+          const dateDiv = document.createElement("div");
+          dateDiv.classList.add("date");
+          dateDiv.textContent = post.createdAt;
+          titleDateDiv.appendChild(dateDiv);
+
+          postDiv.appendChild(titleDateDiv);
+
+          const deleteWrapDiv = document.createElement("div");
+          deleteWrapDiv.classList.add("delete-wrap");
+
+          const deleteDiv = document.createElement("div");
+          deleteDiv.classList.add("delete");
+
+          const deleteText = document.createElement("div");
+          deleteText.textContent = "Delete";
+          deleteDiv.appendChild(deleteText);
+
+          deleteText.style.fontSize = "10px"
+          const deleteImage = document.createElement("img");
+          deleteImage.src = "../public/icons/delete (1).png";
+          deleteImage.alt = "";
+          deleteImage.classList.add("icons-1");
+          deleteDiv.appendChild(deleteImage);
+
+          deleteWrapDiv.appendChild(deleteDiv);
+          postDiv.appendChild(deleteWrapDiv);
+
+          postContainer.appendChild(postDiv);
+
+          deleteWrapDiv.addEventListener("click", async () => {
+            let deletePost = new FormData();
+            deletePost.append("post_id", post.post_id);
+
+            const res = await fetch("../include/delete_post.php", {
+              method: "POST",
+              body: deletePost
+            });
+
+            const result = await res.json();
+
+            if (result.redirect) {
+              postContainer.removeChild(postDiv);
+            }
+          });
+
+        });
+      }
+    }
+
     function decodeHTML(html) {
-  var txt = document.createElement("textarea");
-  txt.innerHTML = html;
-  return txt.value;
-}
-    
-    
+      var txt = document.createElement("textarea");
+      txt.innerHTML = html;
+      return txt.value;
+    }
+
+
     postPrevious.addEventListener('click', () => {
-        if(currentPostPage > 1) {
-            while(postContainer.firstElementChild) {
-                postContainer.removeChild(postContainer.firstElementChild);
-            }
-            currentPostPage--
-            fetchPost(currentPostPage);
+      if (currentPostPage > 1) {
+        while (postContainer.firstElementChild) {
+          postContainer.removeChild(postContainer.firstElementChild);
         }
-    });
-    
-    postNext.addEventListener('click',() => {
-        while(postContainer.firstElementChild) {
-                postContainer.removeChild(postContainer.firstElementChild);
-            }
-        currentPostPage++
+        currentPostPage--
         fetchPost(currentPostPage);
-    })    
-    
+      }
+    });
+
+    postNext.addEventListener('click', () => {
+      while (postContainer.firstElementChild) {
+        postContainer.removeChild(postContainer.firstElementChild);
+      }
+      currentPostPage++
+      fetchPost(currentPostPage);
+    })
+
     fetchPost(currentPostPage);
-    
-    
-    
+
+
+
 
 
 
@@ -3101,49 +3104,49 @@ var approvedIcon = document.querySelector(".aplist .capture");
     refreshBtn.forEach(btn => {
       btn.addEventListener('click', () => {
         refreshLoader.forEach(loader => loader.classList.add('active-spinner'));
-        
-        if(btn.classList.contains("approved")) {
+
+        if (btn.classList.contains("approved")) {
           setTimeout(() => {
-        while(approvedList.firstElementChild) {
-        approvedList.removeChild(approvedList.firstElementChild);
+            while (approvedList.firstElementChild) {
+              approvedList.removeChild(approvedList.firstElementChild);
+            }
+            currentApprovedPage = 1;
+            fetchApproved(currentApprovedPage);
+            refreshLoader.forEach(loader => loader.classList.remove('active-spinner'));
+          }, 2000);
+
         }
-         currentApprovedPage = 1;
-         fetchApproved(currentApprovedPage);
-          refreshLoader.forEach(loader => loader.classList.remove('active-spinner'));
-        }, 2000); 
-       
-        } 
-        
-          if(btn.classList.contains("pending")) {
-        setTimeout(() => {
-            
-          refreshLoader.forEach(loader => loader.classList.remove('active-spinner'));
-         while(admissionList.firstElementChild) {
-        admissionList.removeChild(admissionList.firstElementChild);
+
+        if (btn.classList.contains("pending")) {
+          setTimeout(() => {
+
+            refreshLoader.forEach(loader => loader.classList.remove('active-spinner'));
+            while (admissionList.firstElementChild) {
+              admissionList.removeChild(admissionList.firstElementChild);
+            }
+            currentPage = 1;
+            fetchPending(currentPage);
+          }, 2000)
         }
-        currentPage = 1;
-        fetchPending(currentPage);
-        }, 2000)
-      }
-      
-        if(btn.classList.contains("post-refresh")) {
-        setTimeout(() => {
-            
-          refreshLoader.forEach(loader => loader.classList.remove('active-spinner'));
-          
-            while(postContainer.firstElementChild) {
-                postContainer.removeChild(postContainer.firstElementChild);
+
+        if (btn.classList.contains("post-refresh")) {
+          setTimeout(() => {
+
+            refreshLoader.forEach(loader => loader.classList.remove('active-spinner'));
+
+            while (postContainer.firstElementChild) {
+              postContainer.removeChild(postContainer.firstElementChild);
             }
             currentPostPage = 1;
             fetchPost(currentPostPage);
-        }, 2000)
+          }, 2000)
         }
-          
+
       })
     })
-    
-    
-    
+
+
+
     /*
     // FORGOT PASSWORD
     
@@ -3235,46 +3238,22 @@ var approvedIcon = document.querySelector(".aplist .capture");
     });
     
     */
-    
-    
-    
+
+
+
     let currentPassword = document.getElementById('current-password');
-    let currentPasswordWarn  = document.getElementById('warn');
- //   let form  = document.querySelector('#form');
-    let errors = document.querySelectorAll('.error'); 
-    
-    let shows = document.querySelectorAll('.show'); 
-    
+    let currentPasswordWarn = document.getElementById('warn');
+    //   let form  = document.querySelector('#form');
+    let errors = document.querySelectorAll('.error');
+
+    let shows = document.querySelectorAll('.show');
+
     shows.forEach(btn => {
       btn.addEventListener('click', () => {
-        
-        if(btn.classList.contains('current-password')) {
+
+        if (btn.classList.contains('current-password')) {
           let input = btn.previousElementSibling;
-          
-          if(input.type === 'password') {
-            input.type = 'text';
-            btn.src = '../public/icons/hidden.png'
-          } else {
-            input.type = 'password';
-            btn.src = '../public/icons/eye (1).png'
-          }
-        }
-        
-        if(btn.classList.contains('new-password')) {
-          let input = btn.previousElementSibling;
-          
-          if(input.type === 'password') {
-            input.type = 'text';
-            btn.src = '../public/icons/hidden.png'
-          } else {
-            input.type = 'password';
-            btn.src = '../public/icons/eye (1).png'
-          }
-        }
-        
-        if (btn.classList.contains('retype')) {
-          let input = btn.previousElementSibling;
-          
+
           if (input.type === 'password') {
             input.type = 'text';
             btn.src = '../public/icons/hidden.png'
@@ -3284,189 +3263,216 @@ var approvedIcon = document.querySelector(".aplist .capture");
           }
         }
 
-        
+        if (btn.classList.contains('new-password')) {
+          let input = btn.previousElementSibling;
+
+          if (input.type === 'password') {
+            input.type = 'text';
+            btn.src = '../public/icons/hidden.png'
+          } else {
+            input.type = 'password';
+            btn.src = '../public/icons/eye (1).png'
+          }
+        }
+
+        if (btn.classList.contains('retype')) {
+          let input = btn.previousElementSibling;
+
+          if (input.type === 'password') {
+            input.type = 'text';
+            btn.src = '../public/icons/hidden.png'
+          } else {
+            input.type = 'password';
+            btn.src = '../public/icons/eye (1).png'
+          }
+        }
+
+
       });
     })
-    
+
     currentPassword.addEventListener('input', () => {
-      
+
       currentPasswordWarn.classList.add('forgot-password-active');
-      
-      
+
+
     })
-    currentPassword.addEventListener('blur', async function ()  {
+    currentPassword.addEventListener('blur', async function() {
 
       var passwordData = new FormData();
       passwordData.append("current", this.value);
-    try {
-      const res = await fetch('../include/admin_current_password.php', {
-        method: 'POST',
-        body: passwordData
-      });
-      
-      
-      
-      if(!res.ok) {
-        throw Error("Something wrong with the server, try again ");
+      try {
+        const res = await fetch('../include/admin_current_password.php', {
+          method: 'POST',
+          body: passwordData
+        });
+
+
+
+        if (!res.ok) {
+          throw Error("Something wrong with the server, try again ");
+        }
+
+        const result = await res.json();
+
+        if (result.error) {
+          currentPasswordWarn.classList.remove('forgot-password-active');
+        }
+
+
+        if (result.redirect) {
+          currentPasswordWarn.classList.add('forgot-password-active');
+        }
+
+      } catch (err) {
+        alert(err.message);
       }
-      
-      const result = await res.json();
-    
-      if(result.error) {
-        currentPasswordWarn.classList.remove('forgot-password-active');
-      }
-     
-      
-      if(result.redirect) {
-        currentPasswordWarn.classList.add('forgot-password-active');
-      }
-      
-    } catch(err) {
-      alert(err.message);
-    }
-    
+
     });
-    
-    var changedSuccessfully  = document.querySelector('.password-changed')
-     let form  = document.querySelector('#form-2');
-    form.addEventListener('submit', async function (e) {
+
+    var changedSuccessfully = document.querySelector('.password-changed')
+    let form = document.querySelector('#form-2');
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
-     
+
       var retypePassword = e.target.retype.value.trim();
       var password = e.target.newpassword.value.trim();
-      
-      if(retypePassword !== password ) {
+
+      if (retypePassword !== password) {
         errors[2].textContent = 'Password mismatched, try again.'
       } else {
-           errors[2].textContent = "";
+        errors[2].textContent = "";
       }
-  
-      
+
+
       if (password.length === 0) {
         errors[1].textContent = 'Password cannot be empty.'
-      } else  if (password.length <= 5) {
-        errors[1].textContent = 'Password must be at least 6 characters long.'; 
+      } else if (password.length <= 5) {
+        errors[1].textContent = 'Password must be at least 6 characters long.';
       } else {
-        errors[1].textContent = ''; 
+        errors[1].textContent = '';
       }
-      
+
+
+
       var changeDetails = new FormData(this);
-      
-      
+
+
       try {
-        if( password !== '' && password.length >= 6 && password === retypePassword )  {
-          
+        if (password !== '' && password.length >= 6 && password === retypePassword) {
+
           const res = await fetch('../include/admin_change_password.php', {
             method: "POST",
             body: changeDetails
           })
-          
+
           const result = await res.json();
-          
-         
-          if(result.password) {
-             errors[1].textContent = 'Password mbe.'; 
+
+
+          if (result.password) {
+            errors[1].textContent = 'Password mbe.';
           }
-          
-          if(result.redirect) {
-           changedSuccessfully.style.display = 'flex';
-           this.newpassword.value = "";
-           this.retype.value  = "";
-           this.current.value = "";
+
+          if (result.redirect) {
+            changedSuccessfully.style.display = 'flex';
+            this.newpassword.value = "";
+            this.retype.value = "";
+            this.current.value = "";
           }
-          
-            if(result.error) {
-        currentPasswordWarn.classList.remove('forgot-password-active');
-      }
-          
+
+          if (result.error) {
+            currentPasswordWarn.classList.remove('forgot-password-active');
+          }
+
         }
-        
-        
-      } catch(err) {
+
+
+      } catch (err) {
         console.log(err.message);
       } finally {
         setTimeout(() => {
           changedSuccessfully.style.display = 'none';
         }, 5000);
       }
-      
+
     });
-    
-    
-    
-    
+
+
+
+
     // CREATES AND MANAGE BLOG POST
-    
-    var blogForm  = document.getElementById('post');
+
+    var blogForm = document.getElementById('post');
     var postErr = document.querySelectorAll('.post-error')
     var success = document.querySelector('.created')
-    blogForm.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        
-        var post = new FormData(this)
-        
-        try {
-            const res = await fetch("../include/blog.php", {
-                method: "POST",
-                body: post
-            });
-            
-            const result = await res.json();
-           
-            if(result.title) {
-              postErr[0].textContent = result.title;  
-            } else {
-                 postErr[0].textContent = ""
-            }
-            if(result.feature_image) {
-              postErr[2].textContent = result.feature_image;  
-            } else {
-                 postErr[2].textContent = ""
-            }
-            if(result.body) {
-              postErr[1].textContent = result.body;  
-            } else {
-                 postErr[1].textContent = ""
-            }
-            
-            if(result.redirect) {
-                success.style.display = "block";
-                this.title.value = "";
-                this.body.value = "";
-                this.feature_image.value = "";
-            }
-            
-             
-        } catch(err) {
-            
-            alert(err.message)
-        } finally {
-            setTimeout(() => {
-                  success.style.display = "none";
-            }, 3000)
+    blogForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      var post = new FormData(this)
+
+      try {
+        const res = await fetch("../include/blog.php", {
+          method: "POST",
+          body: post
+        });
+
+        const result = await res.json();
+
+
+        if (result.title) {
+          postErr[0].textContent = result.title;
+        } else {
+          postErr[0].textContent = ""
         }
-        
+        if (result.feature_image) {
+          postErr[2].textContent = result.feature_image;
+        } else {
+          postErr[2].textContent = ""
+        }
+        if (result.body) {
+          postErr[1].textContent = result.body;
+        } else {
+          postErr[1].textContent = ""
+        }
+
+        if (result.redirect) {
+          success.style.display = "block";
+          this.title.value = "";
+          this.body.value = "";
+          this.feature_image.value = "";
+        }
+
+
+      } catch (err) {
+
+        alert(err.message)
+      } finally {
+        setTimeout(() => {
+          success.style.display = "none";
+        }, 3000)
+      }
+
     })
-    
-    
-    
-   
-    
-    
+
+
+
+
+
+
     // User logout
     let logoutButton = document.getElementById("logout-btn");
-    
+
     logoutButton.addEventListener("click", async () => {
-        try {
-          const res =  await fetch("../include/admin_logout.php");
-          if(res.ok) {
-              window.location = "../admin/index.php"
-          }
-        } catch(err) {
-            alert(err.message);
+      try {
+        const res = await fetch("../include/admin_logout.php");
+        if (res.ok) {
+          window.location = "../admin/index.php"
         }
+      } catch (err) {
+        alert(err.message);
+      }
     });
-    
+
     let formChangeProfile = document.getElementById("form");
     let submitBtn = document.getElementById("profile-btn");
     let inputDp = document.getElementById("profile-change");
@@ -3475,22 +3481,21 @@ var approvedIcon = document.querySelector(".aplist .capture");
       submitBtn.click();
     });
 
-    formChangeProfile.addEventListener("submit", async function (e) {
+    formChangeProfile.addEventListener("submit", async function(e) {
       e.preventDefault();
       try {
-          let changedForm = new FormData(this);
-          const res = await fetch("../include/update_admin_dp.php", {
-              method: "POST",
-              body: changedForm
-          });
-          const result = await res.json();
-          
-       
-      } catch(err) {
-          alert(err.message);
+        let changedForm = new FormData(this);
+        const res = await fetch("../include/update_admin_dp.php", {
+          method: "POST",
+          body: changedForm
+        });
+        const result = await res.json();
+
+
+      } catch (err) {
+        alert(err.message);
       }
     });
-     
   </script>
 </body>
 
